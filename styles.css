@@ -86,9 +86,6 @@ html {
   flex-wrap: wrap;
 }
 
-.session-info .profile-bar {
-  margin-left: auto;
-}
 
 .app.in-session #setupSection {
   display: none;
@@ -98,9 +95,6 @@ html {
   gap: 16px;
 }
 
-.app.in-session .profile-bar {
-  display: none;
-}
 
 .session-info .hidden {
   display: none;
@@ -639,20 +633,14 @@ button:disabled {
   }
 
   .session-controls {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
   }
 
   .session-controls__spacer {
     display: none;
-  }
-
-  .session-controls__center {
-    justify-content: center;
-  }
-
-  .session-controls__right {
-    justify-content: center;
-    flex-wrap: wrap;
   }
 
   .session-controls button {

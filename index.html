@@ -21,6 +21,11 @@
             <h1>Thai Flashcards</h1>
             <p class="muted">Pick your study mode, fields, and categories to begin.</p>
           </div>
+          <span class="profile-bar">
+            <span class="muted">Profile:</span>
+            <span id="activeProfile">—</span>
+            <button id="switchProfileBtn" class="ghost small">Switch</button>
+          </span>
         </div>
         <div class="setup-summary" id="setupSummary"></div>
         <div class="setup-grid">
@@ -61,11 +66,6 @@
           <span class="dot">•</span>
           <span id="activeCategories">All categories</span>
           <button id="setupToggle" class="ghost small hidden" aria-expanded="true">Change flash cards</button>
-          <span class="profile-bar">
-            <span class="muted">Profile:</span>
-            <span id="activeProfile">—</span>
-            <button id="switchProfileBtn" class="ghost small">Switch</button>
-          </span>
         </div>
         <div class="card" id="flashcard">
           <div class="card-face" id="cardFront">
