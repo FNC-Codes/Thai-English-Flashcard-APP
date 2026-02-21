@@ -568,6 +568,17 @@ button:disabled {
 
   .app {
     gap: 14px;
+    max-width: 100%;
+  }
+
+  .setup,
+  .card-section,
+  .setup-block,
+  .category-item,
+  .session-controls,
+  .session-info {
+    max-width: 100%;
+    min-width: 0;
   }
 
   .session-info {
@@ -583,7 +594,12 @@ button:disabled {
   }
 
   .field-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
+  }
+
+  .field-item {
+    min-width: 0;
+    max-width: 100%;
   }
 
   .category-controls {
