@@ -23,6 +23,22 @@ const IS_DESKTOP = window.matchMedia
   ? window.matchMedia("(hover: hover) and (pointer: fine)").matches
   : false;
 
+const ensureTtsButton = () => {
+  if (IS_DESKTOP) return null;
+  let btn = document.getElementById("ttsBtn");
+  if (btn) return btn;
+  const center = document.querySelector(".session-controls__center");
+  if (!center) return null;
+  btn = document.createElement("button");
+  btn.id = "ttsBtn";
+  btn.className = "tts-btn";
+  btn.type = "button";
+  btn.setAttribute("aria-label", "Speak");
+  btn.textContent = "Speak";
+  center.prepend(btn);
+  return btn;
+};
+
 const state = {
   rawCategories: [],
   selectedCategories: new Set(),
@@ -267,7 +283,7 @@ const els = {
   correctBtn: document.getElementById("correctBtn"),
   cardTracker: document.getElementById("cardTracker"),
   sessionStatus: document.getElementById("sessionStatus"),
-  ttsBtn: document.getElementById("ttsBtn"),
+  ttsBtn: null,
   editCardBtn: document.getElementById("editCardBtn"),
   editModal: document.getElementById("editModal"),
   editThai: document.getElementById("editThai"),
@@ -757,6 +773,7 @@ const ensureProfile = () => {
 
 const init = async () => {
   if (!IS_DESKTOP) initVoices();
+  els.ttsBtn = ensureTtsButton();
   try {
     const response = await fetch(DATA_API).catch(() => null);
     state.backendAvailable = FORCE_STATIC ? false : Boolean(response && response.ok);
@@ -802,8 +819,9 @@ els.flashcard.addEventListener("click", (event) => {
   applyFlip();
 });
 
-if (!IS_DESKTOP && els.ttsBtn) {
-  els.ttsBtn.addEventListener("click", (event) => {
+if (!IS_DESKTOP) {
+  const ttsBtn = els.ttsBtn || document.getElementById("ttsBtn");
+  if (ttsBtn) ttsBtn.addEventListener("click", (event) => {
     event.preventDefault();
     event.stopPropagation();
     speakCurrentCard();
@@ -862,6 +880,7 @@ els.setupToggle.addEventListener("click", () => {
     setSetupCollapsed(false);
     updateSelectionCounts();
     updateSetupSummary();
+    updateTopbar();
   } else {
     setSetupCollapsed(true);
   }
@@ -877,7 +896,16 @@ if (els.cancelEditBtn) els.cancelEditBtn.addEventListener("click", closeEditModa
 if (els.saveEditBtn) els.saveEditBtn.addEventListener("click", saveEdit);
 
 els.reviewWrongBtn.addEventListener("click", reviewWrongCards);
-els.exitSummaryBtn.addEventListener("click", closeSummary);
+els.exitSummaryBtn.addEventListener("click", () => {
+  closeSummary();
+  state.sessionStarted = false;
+  document.querySelector(".app").classList.remove("in-session");
+  setSetupCollapsed(false);
+  updateSelectionCounts();
+  updateSetupSummary();
+  updateTopbar();
+  setStatus("Pick categories and start a session.");
+});
 
 
 els.switchProfileBtn.addEventListener("click", () => {

@@ -24,12 +24,10 @@ body {
   background: radial-gradient(circle at 20% 20%, #1a2433 0%, #0c1117 55%, #0a0e14 100%);
   color: var(--text);
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
+  display: block;
   padding: 40px 20px 72px;
   line-height: 1.5;
   overflow-x: hidden;
-  touch-action: pan-y;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
 }
@@ -40,13 +38,14 @@ html {
 
 @media (max-width: 768px) {
   body {
-    display: block;
     padding: 16px 12px 28px;
   }
 }
 
 .app {
-  width: min(1280px, 100%);
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
   display: grid;
   gap: 22px;
 }
