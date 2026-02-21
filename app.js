@@ -4,7 +4,6 @@ const dataUrl = new URL(DATA_PATH, window.location.href);
 dataUrl.searchParams.set("v", BUILD_TAG);
 const DATA_URL = dataUrl.toString();
 const DATA_API = "/api/data";
-const UPDATE_API = "/api/update";
 const FORCE_STATIC = true;
 
 const STORAGE_KEY = "thaiFlashProfiles";
@@ -103,24 +102,6 @@ const setSetupCollapsed = (collapsed) => {
   updateSetupSummary();
 };
 
-const openEditModal = () => {
-  if (!state.sessionStarted || state.deck.length === 0) return;
-  if (!state.backendAvailable) {
-    setStatus("Read-only on public site. Run the admin server to edit cards.");
-    return;
-  }
-  const card = state.deck[state.currentIndex];
-  els.editThai.value = card.thai || "";
-  els.editEnglish.value = card.english || "";
-  els.editRoman.value = card.roman_tone || "";
-  els.editPhonetic.value = card.phonetic_easy || "";
-  els.editStatus.textContent = "";
-  els.editModal.classList.add("show");
-};
-
-const closeEditModal = () => {
-  els.editModal.classList.remove("show");
-};
 
 const pickVoice = (lang) => {
   const synth = window.speechSynthesis;
@@ -224,41 +205,6 @@ const speakCurrentCard = () => {
   }
 };
 
-const saveEdit = async () => {
-  if (!state.sessionStarted || state.deck.length === 0) return;
-  if (!state.backendAvailable) {
-    els.editStatus.textContent = "Read-only on public site.";
-    return;
-  }
-  const card = state.deck[state.currentIndex];
-  try {
-    els.editStatus.textContent = "Saving...";
-    const response = await fetch(UPDATE_API, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        category: card.category,
-        index: card.index,
-        updates: {
-          thai: els.editThai.value.trim(),
-          english: els.editEnglish.value.trim(),
-          roman_tone: els.editRoman.value.trim(),
-          phonetic_easy: els.editPhonetic.value.trim(),
-        },
-      }),
-    });
-    const result = await response.json();
-    if (!response.ok) throw new Error(result.error || "Update failed");
-    card.thai = result.item.thai;
-    card.english = result.item.english;
-    card.roman_tone = result.item.roman_tone;
-    card.phonetic_easy = result.item.phonetic_easy;
-    updateCard();
-    els.editStatus.textContent = "Saved.";
-  } catch (error) {
-    els.editStatus.textContent = "Save failed. Make sure the admin server is running.";
-  }
-};
 
 const els = {
   progressText: document.getElementById("progressText"),
@@ -284,26 +230,15 @@ const els = {
   cardTracker: document.getElementById("cardTracker"),
   sessionStatus: document.getElementById("sessionStatus"),
   ttsBtn: null,
-  editCardBtn: document.getElementById("editCardBtn"),
-  editModal: document.getElementById("editModal"),
-  editThai: document.getElementById("editThai"),
-  editEnglish: document.getElementById("editEnglish"),
-  editRoman: document.getElementById("editRoman"),
-  editPhonetic: document.getElementById("editPhonetic"),
-  editStatus: document.getElementById("editStatus"),
-  saveEditBtn: FORCE_STATIC ? null : document.getElementById("saveEditBtn"),
-  cancelEditBtn: FORCE_STATIC ? null : document.getElementById("cancelEditBtn"),
   setupSection: document.getElementById("setupSection"),
   setupToggle: document.getElementById("setupToggle"),
   setupSummary: document.getElementById("setupSummary"),
-  modeGroup: document.getElementById("modeGroup"),
   profileModal: document.getElementById("profileModal"),
   summaryModal: document.getElementById("summaryModal"),
   summaryTop: document.getElementById("summaryTop"),
   summaryList: document.getElementById("summaryList"),
   reviewWrongBtn: document.getElementById("reviewWrongBtn"),
   exitSummaryBtn: document.getElementById("exitSummaryBtn"),
-  profileModal: document.getElementById("profileModal"),
   profileList: document.getElementById("profileList"),
   newProfileName: document.getElementById("newProfileName"),
   createProfileBtn: document.getElementById("createProfileBtn"),
@@ -552,12 +487,6 @@ const reviewWrongCards = () => {
   updateCard();
 };
 
-const handleWrongOnly = (isCorrect) => {
-  if (!state.sessionStarted || state.deck.length === 0) return;
-  const card = state.deck[state.currentIndex];
-  if (!isCorrect) state.wrongDeck.push(card);
-  advanceCard();
-};
 
 const renderCategories = () => {
   els.categoryList.innerHTML = "";
@@ -634,12 +563,6 @@ const renderFieldToggles = (target, activeSet, side) => {
   });
 };
 
-const renderModeButtons = () => {
-  const buttons = els.modeGroup.querySelectorAll(".pill");
-  buttons.forEach((btn) => {
-    btn.classList.toggle("active", btn.dataset.mode === state.mode);
-  });
-};
 
 const loadProfiles = () => {
   const version = localStorage.getItem(STORAGE_VERSION_KEY);
@@ -802,8 +725,12 @@ const init = async () => {
     setSetupCollapsed(false);
     document.querySelector(".app").classList.remove("in-session");
     ensureProfile();
-    if (!state.backendAvailable && els.editCardBtn) {
-      els.editCardBtn.disabled = true;
+    if (!IS_DESKTOP && els.ttsBtn) {
+      els.ttsBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        speakCurrentCard();
+      });
     }
   } catch (error) {
     const message = error instanceof Error ? error.message : "Unknown error";
@@ -819,14 +746,6 @@ els.flashcard.addEventListener("click", (event) => {
   applyFlip();
 });
 
-if (!IS_DESKTOP) {
-  const ttsBtn = els.ttsBtn || document.getElementById("ttsBtn");
-  if (ttsBtn) ttsBtn.addEventListener("click", (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    speakCurrentCard();
-  });
-}
 
 els.shuffleToggle.addEventListener("change", (event) => {
   state.shuffle = event.target.checked;
@@ -891,9 +810,6 @@ els.wrongBtn.addEventListener("click", () => handleRating(2));
 
 els.correctBtn.addEventListener("click", () => handleRating(4));
 
-if (els.editCardBtn) els.editCardBtn.addEventListener("click", openEditModal);
-if (els.cancelEditBtn) els.cancelEditBtn.addEventListener("click", closeEditModal);
-if (els.saveEditBtn) els.saveEditBtn.addEventListener("click", saveEdit);
 
 els.reviewWrongBtn.addEventListener("click", reviewWrongCards);
 els.exitSummaryBtn.addEventListener("click", () => {
