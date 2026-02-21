@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <title>Thai Flashcards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@400;600&family=Space+Grotesk:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="./icon-192.svg" />
+    <link rel="stylesheet" href="styles.css?v=2026-02-21" />
+  </head>
+  <body>
+    <div class="app">
+      <section class="setup" id="setupSection">
+        <div class="setup-header">
+          <div>
+            <h1>Thai Flashcards</h1>
+            <p class="muted">Pick your study mode, fields, and categories to begin.</p>
+          </div>
+        </div>
+        <div class="setup-summary" id="setupSummary"></div>
+        <div class="setup-grid">
+          <div class="setup-block">
+            <h2>Fields on Front</h2>
+            <div class="field-grid" id="frontFields"></div>
+          </div>
+          <div class="setup-block">
+            <h2>Fields on Back</h2>
+            <div class="field-grid" id="backFields"></div>
+          </div>
+          <div class="setup-block">
+            <h2>Session Options</h2>
+            <label class="toggle">
+              <input type="checkbox" id="shuffleToggle" />
+              <span>Shuffle</span>
+            </label>
+            <label class="toggle">
+              <input type="checkbox" id="srsToggle" />
+              <span>Spaced repetition</span>
+            </label>
+            <button id="resetSrsBtn" class="ghost small">Reset SRS</button>
+          </div>
+        </div>
+        <div class="category-controls">
+          <button id="selectAllBtn" class="ghost">Select All</button>
+          <button id="clearAllBtn" class="ghost">Clear All</button>
+        </div>
+        <div id="categoryList" class="category-list"></div>
+        <div class="category-start">
+          <button id="startBtn" class="primary">Start Session</button>
+        </div>
+      </section>
+
+      <section class="card-section" id="cardSection">
+        <div class="session-info">
+          <span id="progressText">0 / 0</span>
+          <span class="dot">•</span>
+          <span id="activeCategories">All categories</span>
+          <button id="setupToggle" class="ghost small hidden" aria-expanded="true">Change flash cards</button>
+          <span class="profile-bar">
+            <span class="muted">Profile:</span>
+            <span id="activeProfile">—</span>
+            <button id="switchProfileBtn" class="ghost small">Switch</button>
+          </span>
+        </div>
+        <div class="card" id="flashcard">
+          <div class="card-face" id="cardFront">
+            <div class="card-fields" id="frontFieldsView"></div>
+            <div class="hint" id="frontHint">Tap to flip</div>
+          </div>
+          <div class="card-face" id="cardBack">
+            <div class="card-fields" id="backFieldsView"></div>
+          </div>
+        </div>
+        <div class="session-controls">
+          <div class="session-controls__spacer" aria-hidden="true"></div>
+          <div class="session-controls__center">
+            <button id="wrongBtn" class="danger">Wrong</button>
+            <button id="correctBtn" class="success">Correct</button>
+          </div>
+          <div class="session-controls__right">
+            <div class="card-tracker" id="cardTracker">0 / 0</div>
+          </div>
+        </div>
+        <div class="status" id="sessionStatus">Select categories to begin.</div>
+      </section>
+    </div>
+
+    <div class="modal" id="profileModal">
+      <div class="modal-card">
+        <h2>Choose Profile</h2>
+        <div id="profileList" class="profile-list"></div>
+        <div class="profile-create">
+          <input type="text" id="newProfileName" placeholder="New profile name" />
+          <button id="createProfileBtn" class="primary">Create</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="summaryModal">
+      <div class="modal-card">
+        <h2>Session Summary</h2>
+        <div class="summary-top" id="summaryTop">0 right • 0 wrong • 0%</div>
+        <div class="summary-list" id="summaryList"></div>
+        <div class="summary-actions">
+          <button id="reviewWrongBtn" class="primary">Review Wrong Cards</button>
+          <button id="exitSummaryBtn" class="ghost">Exit</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js?v=2026-02-21" defer></script>
+  </body>
+</html>

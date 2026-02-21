@@ -1,0 +1,3339 @@
+{
+  "meta": {
+    "language": "th",
+    "version": "2.1",
+    "description": "Categorized Thai vocabulary with Thai+English, tone-mark romanization, phonetic_easy, word_type, and best-effort classifier annotations. Duplicates preserved.",
+    "fields": [
+      "category",
+      "thai",
+      "english",
+      "roman_tone",
+      "phonetic_easy",
+      "word_type",
+      "classifier"
+    ]
+  },
+  "categories": [
+    {
+      "category": "Greetings / Basics",
+      "items": [
+        {
+          "thai": "สวัสดี",
+          "english": "hello",
+          "roman_tone": "sàwàtdii",
+          "phonetic_easy": "sa-wat-dii",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ขอโทษ",
+          "english": "sorry / excuse me",
+          "roman_tone": "khɔ̌ɔthôot",
+          "phonetic_easy": "khoo-thoot",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ขอบคุณ",
+          "english": "thank you",
+          "roman_tone": "khɔ̀ɔpkhun",
+          "phonetic_easy": "khop-khun",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ไม่เป็นไร",
+          "english": "it’s okay / no problem",
+          "roman_tone": "mâi bpen rai",
+          "phonetic_easy": "mai bpen rai",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ดิฉัน",
+          "english": "I (female)",
+          "roman_tone": "dìchǎn",
+          "phonetic_easy": "di-chan",
+          "word_type": "pronoun",
+          "classifier": null
+        },
+        {
+          "thai": "ผม",
+          "english": "I (male)",
+          "roman_tone": "phǒm",
+          "phonetic_easy": "phom",
+          "word_type": "pronoun",
+          "classifier": null
+        },
+        {
+          "thai": "คุณ",
+          "english": "you",
+          "roman_tone": "khun",
+          "phonetic_easy": "khoon",
+          "word_type": "pronoun",
+          "classifier": null
+        },
+        {
+          "thai": "เขา",
+          "english": "he / she",
+          "roman_tone": "khǎo",
+          "phonetic_easy": "khao",
+          "word_type": "pronoun",
+          "classifier": null
+        },
+        {
+          "thai": "ชื่อ",
+          "english": "name",
+          "roman_tone": "chʉ̂ʉ",
+          "phonetic_easy": "choo",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "อะไร",
+          "english": "what?",
+          "roman_tone": "'aray ná?",
+          "phonetic_easy": "ah-rii na?",
+          "word_type": "question",
+          "classifier": null
+        },
+        {
+          "thai": "ค่ะ",
+          "english": "polite particle (female)",
+          "roman_tone": "khâ",
+          "phonetic_easy": "kha",
+          "word_type": "particle",
+          "classifier": null
+        },
+        {
+          "thai": "ครับ",
+          "english": "polite particle (male)",
+          "roman_tone": "khráp",
+          "phonetic_easy": "khrap",
+          "word_type": "particle",
+          "classifier": null
+        },
+        {
+          "thai": "หรือ",
+          "english": "or / question",
+          "roman_tone": "rʉ̌ʉ",
+          "phonetic_easy": "roo",
+          "word_type": "particle",
+          "classifier": null
+        },
+        {
+          "thai": "ยินดีที่รู้จัก",
+          "english": "nice to meet you",
+          "roman_tone": "yin-dii-thii-ruu-jak",
+          "phonetic_easy": "yin-dee-tee-roo-jak",
+          "word_type": "particle",
+          "classifier": null
+        },
+        {
+          "thai": "สบายดี",
+          "english": "I'm fine / well",
+          "roman_tone": "sabaay dii",
+          "phonetic_easy": "sa-bye dee",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "มาจาก",
+          "english": "come from",
+          "roman_tone": "maajàak",
+          "phonetic_easy": "maa-jaak",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ประเทศ",
+          "english": "country",
+          "roman_tone": "bpràthêet",
+          "phonetic_easy": "bpra-theet",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เป็นคนไทย",
+          "english": "to be Thai person",
+          "roman_tone": "pen khon thay",
+          "phonetic_easy": "pen-khon-thai",
+          "word_type": "verb",
+          "classifier": null
+        },
+        {
+          "thai": "พบกันใหม่",
+          "english": "see you again",
+          "roman_tone": "phóp kan mày",
+          "phonetic_easy": "phop-gan-mai",
+          "word_type": "noun",
+          "classifier": null
+        }
+      ]
+    },
+    {
+      "category": "Classroom / Colors / Basics",
+      "items": [
+        {
+          "thai": "นี่",
+          "english": "this",
+          "roman_tone": "nîi",
+          "phonetic_easy": "nii",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "นั้น",
+          "english": "that",
+          "roman_tone": "nán",
+          "phonetic_easy": "nan",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ภาษาไทย",
+          "english": "Thai language",
+          "roman_tone": "phaasǎa thai",
+          "phonetic_easy": "phaa-saa thai",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เรียกว่า",
+          "english": "called",
+          "roman_tone": "rîakwâa",
+          "phonetic_easy": "riak-waa",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ดินสอ",
+          "english": "pencil",
+          "roman_tone": "dinsɔ̌ɔ",
+          "phonetic_easy": "din-soo",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "อัน",
+            "roman_tone": "an",
+            "phonetic_easy": "an"
+          }
+        },
+        {
+          "thai": "ปากกา",
+          "english": "pen",
+          "roman_tone": "pàakgaa",
+          "phonetic_easy": "paak-gaa",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "อัน",
+            "roman_tone": "an",
+            "phonetic_easy": "an"
+          }
+        },
+        {
+          "thai": "ยางลบ",
+          "english": "eraser",
+          "roman_tone": "yaanglóp",
+          "phonetic_easy": "yaang-lop",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "อัน",
+            "roman_tone": "an",
+            "phonetic_easy": "an"
+          }
+        },
+        {
+          "thai": "ไม้บรรทัด",
+          "english": "ruler",
+          "roman_tone": "máibanthát",
+          "phonetic_easy": "mai-ban-that",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "อัน",
+            "roman_tone": "an",
+            "phonetic_easy": "an"
+          }
+        },
+        {
+          "thai": "สี",
+          "english": "color",
+          "roman_tone": "sǐi",
+          "phonetic_easy": "sii",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "สีแดง",
+          "english": "red",
+          "roman_tone": "sǐi dɛɛng",
+          "phonetic_easy": "sii daeaeng",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "สีเหลือง",
+          "english": "yellow",
+          "roman_tone": "sǐi lʉ̌ang",
+          "phonetic_easy": "sii lueang",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "สีส้ม",
+          "english": "orange",
+          "roman_tone": "sǐi sôm",
+          "phonetic_easy": "sii som",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "สีเขียว",
+          "english": "green",
+          "roman_tone": "sǐi khǐaw",
+          "phonetic_easy": "sii khiaw",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "สีดำ",
+          "english": "black",
+          "roman_tone": "sǐi dam",
+          "phonetic_easy": "sii dam",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ชอบ",
+          "english": "to like",
+          "roman_tone": "chɔ̂ɔp",
+          "phonetic_easy": "choop",
+          "word_type": "verb",
+          "classifier": null
+        },
+        {
+          "thai": "เหมือน",
+          "english": "same / like",
+          "roman_tone": "mʉ̌an",
+          "phonetic_easy": "muean",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ไม่รู้",
+          "english": "don’t know",
+          "roman_tone": "mâi rúu",
+          "phonetic_easy": "mai ruu",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ไม่ใช่",
+          "english": "not / isn’t",
+          "roman_tone": "mâi châi",
+          "phonetic_easy": "mai chai",
+          "word_type": "noun",
+          "classifier": null
+        }
+      ]
+    },
+    {
+      "category": "Have / People / Place / Classifiers",
+      "items": [
+        {
+          "thai": "มี",
+          "english": "to have / there is",
+          "roman_tone": "mii",
+          "phonetic_easy": "mii",
+          "word_type": "verb",
+          "classifier": null
+        },
+        {
+          "thai": "ไม่มี",
+          "english": "don’t have / there isn’t",
+          "roman_tone": "mâi mii",
+          "phonetic_easy": "mai mii",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "หนังสือ",
+          "english": "book",
+          "roman_tone": "nǎngsʉ̌ʉ",
+          "phonetic_easy": "nang-sueue",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "เล่ม",
+            "roman_tone": "lêm",
+            "phonetic_easy": "lem"
+          }
+        },
+        {
+          "thai": "สมุด",
+          "english": "notebook",
+          "roman_tone": "sàmùt",
+          "phonetic_easy": "sa-mut",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "เล่ม",
+            "roman_tone": "lêm",
+            "phonetic_easy": "lem"
+          }
+        },
+        {
+          "thai": "ไหม",
+          "english": "yes/no question marker",
+          "roman_tone": "mái",
+          "phonetic_easy": "mai",
+          "word_type": "particle",
+          "classifier": null
+        },
+        {
+          "thai": "กี่",
+          "english": "how many",
+          "roman_tone": "gìi",
+          "phonetic_easy": "gii",
+          "word_type": "question",
+          "classifier": null
+        },
+        {
+          "thai": "เล่ม",
+          "english": "classifier for books",
+          "roman_tone": "lêm",
+          "phonetic_easy": "lem",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "อัน",
+          "english": "classifier for small objects",
+          "roman_tone": "an",
+          "phonetic_easy": "an",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "ที่นี่",
+          "english": "here",
+          "roman_tone": "thîinîi",
+          "phonetic_easy": "thii-nii",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ที่นั่น",
+          "english": "there",
+          "roman_tone": "thîinân",
+          "phonetic_easy": "thii-nan",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ที่",
+          "english": "at / in / that",
+          "roman_tone": "thîi",
+          "phonetic_easy": "thii",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ห้อง",
+          "english": "room",
+          "roman_tone": "hɔ̂ng",
+          "phonetic_easy": "hong",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "นักเรียน",
+          "english": "student",
+          "roman_tone": "nákrian",
+          "phonetic_easy": "nak-rian",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        },
+        {
+          "thai": "ครู",
+          "english": "teacher",
+          "roman_tone": "khruu",
+          "phonetic_easy": "khruu",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        },
+        {
+          "thai": "ผู้ชาย",
+          "english": "man",
+          "roman_tone": "phûuchaai",
+          "phonetic_easy": "phuu-chaai",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        },
+        {
+          "thai": "ผู้หญิง",
+          "english": "woman",
+          "roman_tone": "phûuyǐng",
+          "phonetic_easy": "phuu-ying",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        },
+        {
+          "thai": "คน",
+          "english": "person / classifier for people",
+          "roman_tone": "khon",
+          "phonetic_easy": "khon",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ใคร",
+          "english": "who?",
+          "roman_tone": "khrai",
+          "phonetic_easy": "khrai",
+          "word_type": "question",
+          "classifier": null
+        }
+      ]
+    },
+    {
+      "category": "Drinks / Containers / Buying",
+      "items": [
+        {
+          "thai": "น้ำ",
+          "english": "water",
+          "roman_tone": "náam",
+          "phonetic_easy": "naam",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "แก้ว",
+            "roman_tone": "kêew",
+            "phonetic_easy": "kaew"
+          }
+        },
+        {
+          "thai": "น้ำส้ม",
+          "english": "orange juice",
+          "roman_tone": "náamsôm",
+          "phonetic_easy": "naam-som",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "แก้ว",
+            "roman_tone": "kêew",
+            "phonetic_easy": "kaew"
+          }
+        },
+        {
+          "thai": "น้ำชา",
+          "english": "tea",
+          "roman_tone": "náamchaa",
+          "phonetic_easy": "naam-chaa",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "แก้ว",
+            "roman_tone": "kêew",
+            "phonetic_easy": "kaew"
+          }
+        },
+        {
+          "thai": "กาแฟ",
+          "english": "coffee",
+          "roman_tone": "gaafɛɛ",
+          "phonetic_easy": "gaa-faeae",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "แก้ว",
+            "roman_tone": "kêew",
+            "phonetic_easy": "kaew"
+          }
+        },
+        {
+          "thai": "อยาก",
+          "english": "want",
+          "roman_tone": "yàak",
+          "phonetic_easy": "yaak",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เอา",
+          "english": "to take / want (as in ordering)",
+          "roman_tone": "ao",
+          "phonetic_easy": "ao",
+          "word_type": "verb",
+          "classifier": null
+        },
+        {
+          "thai": "ขาย",
+          "english": "to sell",
+          "roman_tone": "khǎai",
+          "phonetic_easy": "khaai",
+          "word_type": "verb",
+          "classifier": null
+        },
+        {
+          "thai": "คนขาย",
+          "english": "seller",
+          "roman_tone": "khonkhǎai",
+          "phonetic_easy": "khon-khaai",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        },
+        {
+          "thai": "ขวด",
+          "english": "bottle (classifier)",
+          "roman_tone": "khùat",
+          "phonetic_easy": "khuat",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ถ้วย",
+          "english": "cup/bowl (classifier)",
+          "roman_tone": "thûay",
+          "phonetic_easy": "thuay",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "แก้ว",
+          "english": "glass (classifier)",
+          "roman_tone": "kêew",
+          "phonetic_easy": "keew",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "กระป๋อง",
+          "english": "can",
+          "roman_tone": "gràbpɔ̌ɔng",
+          "phonetic_easy": "gra-bpoong",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "กล่อง",
+          "english": "box",
+          "roman_tone": "glɔ̀ɔng",
+          "phonetic_easy": "gloong",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ใบ",
+          "english": "classifier (bags/flat containers)",
+          "roman_tone": "bai",
+          "phonetic_easy": "bai",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "อีก",
+          "english": "more / again",
+          "roman_tone": "ìik",
+          "phonetic_easy": "iik",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "พอ",
+          "english": "enough",
+          "roman_tone": "phɔɔ",
+          "phonetic_easy": "phoo",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "นิดหน่อย",
+          "english": "a little",
+          "roman_tone": "nítnɔ̀i",
+          "phonetic_easy": "nit-noi",
+          "word_type": "noun",
+          "classifier": null
+        }
+      ]
+    },
+    {
+      "category": "Food / Restaurant",
+      "items": [
+        {
+          "thai": "กิน",
+          "english": "to eat",
+          "roman_tone": "gin",
+          "phonetic_easy": "gin",
+          "word_type": "verb",
+          "classifier": null
+        },
+        {
+          "thai": "ร้อน",
+          "english": "hot",
+          "roman_tone": "rɔ́ɔn",
+          "phonetic_easy": "roon",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "เย็น",
+          "english": "cold / cool",
+          "roman_tone": "yen",
+          "phonetic_easy": "yen",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "อร่อย",
+          "english": "delicious",
+          "roman_tone": "àròi",
+          "phonetic_easy": "a-roi",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "ใส่",
+          "english": "to put in / add",
+          "roman_tone": "sài",
+          "phonetic_easy": "sai",
+          "word_type": "verb",
+          "classifier": null
+        },
+        {
+          "thai": "น้ำตาล",
+          "english": "sugar",
+          "roman_tone": "náamdtaan",
+          "phonetic_easy": "naam-dtaan",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "นม",
+          "english": "milk",
+          "roman_tone": "nom",
+          "phonetic_easy": "nom",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ร้าน",
+          "english": "shop / restaurant",
+          "roman_tone": "ráan",
+          "phonetic_easy": "raan",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "อาหาร",
+          "english": "food",
+          "roman_tone": "aahǎan",
+          "phonetic_easy": "aa-haan",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "สั่ง",
+          "english": "to order",
+          "roman_tone": "sàng",
+          "phonetic_easy": "sang",
+          "word_type": "verb",
+          "classifier": null
+        },
+        {
+          "thai": "ข้าว",
+          "english": "rice",
+          "roman_tone": "khâao",
+          "phonetic_easy": "khaao",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ข้าวผัด",
+          "english": "fried rice",
+          "roman_tone": "khâaophàt",
+          "phonetic_easy": "khaao-phat",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "กุ้ง",
+          "english": "shrimp",
+          "roman_tone": "gûng",
+          "phonetic_easy": "gung",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ไก่",
+          "english": "chicken",
+          "roman_tone": "gài",
+          "phonetic_easy": "gai",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "หมู",
+          "english": "pork",
+          "roman_tone": "mǔu",
+          "phonetic_easy": "muu",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ไข่",
+          "english": "egg",
+          "roman_tone": "khài",
+          "phonetic_easy": "khai",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "จาน",
+          "english": "plate",
+          "roman_tone": "jaan",
+          "phonetic_easy": "jaan",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ชาม",
+          "english": "bowl",
+          "roman_tone": "chaam",
+          "phonetic_easy": "chaam",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "น้ำแข็ง",
+          "english": "ice",
+          "roman_tone": "náamkhǎeng",
+          "phonetic_easy": "naam-khaeng",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "คิดเงิน",
+          "english": "check, please / bill",
+          "roman_tone": "khítngən",
+          "phonetic_easy": "khit-ngoen",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เท่าไร",
+          "english": "how much?",
+          "roman_tone": "thâorai",
+          "phonetic_easy": "thao-rai",
+          "word_type": "question",
+          "classifier": null
+        }
+      ]
+    },
+    {
+      "category": "Dessert / Utensils / Tastes",
+      "items": [
+        {
+          "thai": "ขนม",
+          "english": "snack / dessert",
+          "roman_tone": "khànǒm",
+          "phonetic_easy": "kha-nom",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ขนมปัง",
+          "english": "bread",
+          "roman_tone": "khànǒmbpang",
+          "phonetic_easy": "kha-nom-bpang",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ก๋วยเตี๋ยว",
+          "english": "noodles",
+          "roman_tone": "gǔaydtǐao",
+          "phonetic_easy": "guay-dtiao",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ก๋วยเตี๋ยวน้ำ",
+          "english": "noodles soup",
+          "roman_tone": "gǔaydtǐaonáam",
+          "phonetic_easy": "guay-dtiao-naam",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ก๋วยเตี๋ยวแห้ง",
+          "english": "dry noodles",
+          "roman_tone": "gǔaydtǐaohɛ̂ɛng",
+          "phonetic_easy": "guay-dtiao-haeaeng",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ช้อน",
+          "english": "spoon",
+          "roman_tone": "chɔ́ɔn",
+          "phonetic_easy": "choon",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ส้อม",
+          "english": "fork",
+          "roman_tone": "sɔ̂ɔm",
+          "phonetic_easy": "soom",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "มีด",
+          "english": "knife",
+          "roman_tone": "mîit",
+          "phonetic_easy": "miit",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ตะเกียบ",
+          "english": "chopsticks",
+          "roman_tone": "tàgìap",
+          "phonetic_easy": "ta-giap",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คู่",
+            "roman_tone": "khûu",
+            "phonetic_easy": "khuu"
+          }
+        },
+        {
+          "thai": "หวาน",
+          "english": "sweet",
+          "roman_tone": "wǎan",
+          "phonetic_easy": "waan",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "เผ็ด",
+          "english": "spicy",
+          "roman_tone": "phèt",
+          "phonetic_easy": "phet",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "เค็ม",
+          "english": "salty",
+          "roman_tone": "khem",
+          "phonetic_easy": "khem",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "ไม่ใส่",
+          "english": "don’t add",
+          "roman_tone": "mâi sài",
+          "phonetic_easy": "mai sai",
+          "word_type": "noun",
+          "classifier": null
+        }
+      ]
+    },
+    {
+      "category": "Skills / Activities",
+      "items": [
+        {
+          "thai": "ได้",
+          "english": "can / able",
+          "roman_tone": "dâai",
+          "phonetic_easy": "daai",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ไม่ได้",
+          "english": "can’t / not allowed",
+          "roman_tone": "mâi dâai",
+          "phonetic_easy": "mai daai",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "นิดหน่อย",
+          "english": "a little",
+          "roman_tone": "nítnɔ̀i",
+          "phonetic_easy": "nit-noi",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "พูด",
+          "english": "to speak",
+          "roman_tone": "phûut",
+          "phonetic_easy": "phuut",
+          "word_type": "verb",
+          "classifier": null
+        },
+        {
+          "thai": "เขียน",
+          "english": "to write",
+          "roman_tone": "khǐan",
+          "phonetic_easy": "khian",
+          "word_type": "verb",
+          "classifier": null
+        },
+        {
+          "thai": "อ่าน",
+          "english": "to read",
+          "roman_tone": "àan",
+          "phonetic_easy": "aan",
+          "word_type": "verb",
+          "classifier": null
+        },
+        {
+          "thai": "ทำ",
+          "english": "to do / make",
+          "roman_tone": "tham",
+          "phonetic_easy": "tham",
+          "word_type": "verb",
+          "classifier": null
+        },
+        {
+          "thai": "ทำขนม",
+          "english": "make dessert",
+          "roman_tone": "tham khànǒm",
+          "phonetic_easy": "tham kha-nom",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ขับรถ",
+          "english": "drive a car",
+          "roman_tone": "khàp rót",
+          "phonetic_easy": "khap rot",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ขี่จักรยาน",
+          "english": "ride a bicycle",
+          "roman_tone": "khìi jàkgraayaan",
+          "phonetic_easy": "khii jak-graa-yaan",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ขี่มอเตอร์ไซค์",
+          "english": "ride a motorbike",
+          "roman_tone": "khìi mɔɔdtəəsai",
+          "phonetic_easy": "khii moo-dtoeoe-sai",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ว่ายน้ำ",
+          "english": "swim",
+          "roman_tone": "wâai náam",
+          "phonetic_easy": "waai naam",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ร้องเพลง",
+          "english": "sing",
+          "roman_tone": "rɔ́ɔng phleeng",
+          "phonetic_easy": "roong phleeng",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เล่นดนตรี",
+          "english": "play music/instruments",
+          "roman_tone": "lên dondtrii",
+          "phonetic_easy": "len don-dtrii",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เล่นกีฬา",
+          "english": "play sports",
+          "roman_tone": "lên giilaa",
+          "phonetic_easy": "len gii-laa",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ด้วย",
+          "english": "with / also",
+          "roman_tone": "dûay",
+          "phonetic_easy": "duay",
+          "word_type": "noun",
+          "classifier": null
+        }
+      ]
+    },
+    {
+      "category": "Shopping / Fruit",
+      "items": [
+        {
+          "thai": "ซื้อ",
+          "english": "to buy",
+          "roman_tone": "sʉ́ʉ",
+          "phonetic_easy": "sueue",
+          "word_type": "verb",
+          "classifier": null
+        },
+        {
+          "thai": "ร้านค้า",
+          "english": "shop",
+          "roman_tone": "ráankháa",
+          "phonetic_easy": "raan-khaa",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "คนซื้อ",
+          "english": "buyer",
+          "roman_tone": "khonsʉ́ʉ",
+          "phonetic_easy": "khon-sueue",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        },
+        {
+          "thai": "ขาย",
+          "english": "to sell",
+          "roman_tone": "khǎai",
+          "phonetic_easy": "khaai",
+          "word_type": "verb",
+          "classifier": null
+        },
+        {
+          "thai": "คนขาย",
+          "english": "seller",
+          "roman_tone": "khonkhǎai",
+          "phonetic_easy": "khon-khaai",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        },
+        {
+          "thai": "แม่ค้า",
+          "english": "female vendor",
+          "roman_tone": "mâekháa",
+          "phonetic_easy": "mae-khaa",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        },
+        {
+          "thai": "พ่อค้า",
+          "english": "male vendor",
+          "roman_tone": "phɔ̂ɔkháa",
+          "phonetic_easy": "phoo-khaa",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        },
+        {
+          "thai": "ผลไม้",
+          "english": "fruit",
+          "roman_tone": "phǒnlámáai",
+          "phonetic_easy": "phon-la-maai",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "มะม่วง",
+          "english": "mango",
+          "roman_tone": "mámûang",
+          "phonetic_easy": "ma-muang",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "ลูก",
+            "roman_tone": null,
+            "phonetic_easy": null
+          }
+        },
+        {
+          "thai": "สับปะรด",
+          "english": "pineapple",
+          "roman_tone": "sàpbpàrót",
+          "phonetic_easy": "sap-bpa-rot",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "แตงโม",
+          "english": "watermelon",
+          "roman_tone": "dtaengmoo",
+          "phonetic_easy": "dtaeng-moo",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ส้ม",
+          "english": "orange",
+          "roman_tone": "sôm",
+          "phonetic_easy": "som",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "กล้วย",
+          "english": "banana",
+          "roman_tone": "glûay",
+          "phonetic_easy": "gluay",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "หวี",
+            "roman_tone": "wǐi",
+            "phonetic_easy": "wii"
+          }
+        },
+        {
+          "thai": "กิโล",
+          "english": "kilogram",
+          "roman_tone": "gìloo",
+          "phonetic_easy": "gi-loo",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ชิ้น",
+          "english": "piece",
+          "roman_tone": "chín",
+          "phonetic_easy": "chin",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "หวี",
+          "english": "bunch (bananas)",
+          "roman_tone": "wǐi",
+          "phonetic_easy": "wii",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ลด",
+          "english": "discount / reduce",
+          "roman_tone": "lót",
+          "phonetic_easy": "lot",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ตลาด",
+          "english": "market",
+          "roman_tone": "talàat",
+          "phonetic_easy": "talaat",
+          "word_type": "noun",
+          "classifier": null
+        }
+      ]
+    },
+    {
+      "category": "Clothing & Classifiers",
+      "items": [
+        {
+          "thai": "สมมุติว่า",
+          "english": "suppose / imagine",
+          "roman_tone": "sǒmmùtwâa",
+          "phonetic_easy": "som-mut-waa",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เสื้อ",
+          "english": "shirt",
+          "roman_tone": "sʉ̂a",
+          "phonetic_easy": "suea",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "ตัว",
+            "roman_tone": "dtua",
+            "phonetic_easy": "dtua"
+          }
+        },
+        {
+          "thai": "กางเกง",
+          "english": "pants",
+          "roman_tone": "gaaengkeng",
+          "phonetic_easy": "gaaeng-keng",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "ตัว",
+            "roman_tone": "dtua",
+            "phonetic_easy": "dtua"
+          }
+        },
+        {
+          "thai": "รองเท้า",
+          "english": "shoes",
+          "roman_tone": "rɔɔngtháao",
+          "phonetic_easy": "roong-thaao",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คู่",
+            "roman_tone": "khûu",
+            "phonetic_easy": "khuu"
+          }
+        },
+        {
+          "thai": "ตัว",
+          "english": "classifier for clothes/animals",
+          "roman_tone": "dtua",
+          "phonetic_easy": "dtua",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "คู่",
+          "english": "pair classifier",
+          "roman_tone": "khûu",
+          "phonetic_easy": "khuu",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "กระโปรง",
+          "english": "skirt",
+          "roman_tone": "gràbproong",
+          "phonetic_easy": "gra-bproong",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "ตัว",
+            "roman_tone": "dtua",
+            "phonetic_easy": "dtua"
+          }
+        },
+        {
+          "thai": "กระเป๋า",
+          "english": "bag",
+          "roman_tone": "gràbpǎo",
+          "phonetic_easy": "gra-bpao",
+          "word_type": "noun",
+          "classifier": null
+        }
+      ]
+    },
+    {
+      "category": "Location / Daily Life",
+      "items": [
+        {
+          "thai": "ที่ไหน",
+          "english": "where?",
+          "roman_tone": "thîinǎi",
+          "phonetic_easy": "thii-nai",
+          "word_type": "question",
+          "classifier": null
+        },
+        {
+          "thai": "ที่",
+          "english": "at / in",
+          "roman_tone": "thîi",
+          "phonetic_easy": "thii",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เมืองไทย",
+          "english": "Thailand",
+          "roman_tone": "mʉangthai",
+          "phonetic_easy": "mueang-thai",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ทำ",
+          "english": "do / make",
+          "roman_tone": "tham",
+          "phonetic_easy": "tham",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เรียน",
+          "english": "study",
+          "roman_tone": "rian",
+          "phonetic_easy": "rian",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "โรงเรียน",
+          "english": "school",
+          "roman_tone": "roongrian",
+          "phonetic_easy": "roong-rian",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "อยู่",
+          "english": "live / be located",
+          "roman_tone": "yùu",
+          "phonetic_easy": "yuu",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ถนน",
+          "english": "road",
+          "roman_tone": "thànǒn",
+          "phonetic_easy": "tha-non",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ทำงาน",
+          "english": "work",
+          "roman_tone": "thamngaan",
+          "phonetic_easy": "tham-ngaan",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "สถานทูต",
+          "english": "embassy",
+          "roman_tone": "sàthǎanthûut",
+          "phonetic_easy": "sa-thaan-thuut",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ใกล้",
+          "english": "near",
+          "roman_tone": "glâi",
+          "phonetic_easy": "glai",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "ห้าง",
+          "english": "mall",
+          "roman_tone": "hâang",
+          "phonetic_easy": "haang",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "สอน",
+          "english": "teach",
+          "roman_tone": "sɔ̌ɔn",
+          "phonetic_easy": "soon",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "พัก",
+          "english": "rest / stay",
+          "roman_tone": "phák",
+          "phonetic_easy": "phak",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ไปเที่ยว",
+          "english": "go travel",
+          "roman_tone": "paithîao",
+          "phonetic_easy": "pai-thiao",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ไปธุระ",
+          "english": "go run errands",
+          "roman_tone": "paithúrá",
+          "phonetic_easy": "pai-thu-ra",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ขอวีซ่า",
+          "english": "apply for a visa",
+          "roman_tone": "khɔ̌ɔ wiisâa",
+          "phonetic_easy": "khoo wii-saa",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "กรุงเทพ",
+          "english": "Bangkok",
+          "roman_tone": "grungthêep",
+          "phonetic_easy": "grung-theep",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "บ้าน",
+          "english": "house",
+          "roman_tone": "bâan",
+          "phonetic_easy": "baan",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "โรงแรม",
+          "english": "hotel",
+          "roman_tone": "roongrɛɛm",
+          "phonetic_easy": "roong-raeaem",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "ธนาคาร",
+          "english": "bank",
+          "roman_tone": "thánaakhaan",
+          "phonetic_easy": "tha-naa-khaan",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "สถานี",
+          "english": "station",
+          "roman_tone": "sàthǎanii",
+          "phonetic_easy": "sa-thaa-nii",
+          "word_type": "noun",
+          "classifier": null
+        }
+      ]
+    },
+    {
+      "category": "Transport / Directions",
+      "items": [
+        {
+          "thai": "มา",
+          "english": "to come",
+          "roman_tone": "maa",
+          "phonetic_easy": "maa",
+          "word_type": "verb",
+          "classifier": null
+        },
+        {
+          "thai": "ไป",
+          "english": "to go",
+          "roman_tone": "pai",
+          "phonetic_easy": "pai",
+          "word_type": "verb",
+          "classifier": null
+        },
+        {
+          "thai": "ยังไง",
+          "english": "how?",
+          "roman_tone": "yangngai",
+          "phonetic_easy": "yang-ngai",
+          "word_type": "question",
+          "classifier": null
+        },
+        {
+          "thai": "ขึ้น",
+          "english": "get on / go up",
+          "roman_tone": "khʉ̂n",
+          "phonetic_easy": "khuen",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เครื่องบิน",
+          "english": "airplane",
+          "roman_tone": "khrʉ̂angbin",
+          "phonetic_easy": "khrueang-bin",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "รถไฟฟ้า",
+          "english": "skytrain",
+          "roman_tone": "rótfaifáa",
+          "phonetic_easy": "rot-fai-faa",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "รถตุ๊กตุ๊ก",
+          "english": "tuk tuk",
+          "roman_tone": "róttúktúk",
+          "phonetic_easy": "rot-tuk-tuk",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "รถแท็กซี่",
+          "english": "taxi",
+          "roman_tone": "rótthéeksîi",
+          "phonetic_easy": "rot-theek-sii",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "รถเมล์",
+          "english": "bus",
+          "roman_tone": "rótmee",
+          "phonetic_easy": "rot-mee",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เดิน",
+          "english": "walk",
+          "roman_tone": "dəən",
+          "phonetic_easy": "doeoen",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ราวๆ",
+          "english": "roughly / around",
+          "roman_tone": "raaoraao",
+          "phonetic_easy": "raao-raao",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "คิดว่า",
+          "english": "to think that",
+          "roman_tone": "khítwâa",
+          "phonetic_easy": "khit-waa",
+          "word_type": "verb",
+          "classifier": null
+        },
+        {
+          "thai": "แพง",
+          "english": "expensive",
+          "roman_tone": "phɛɛng",
+          "phonetic_easy": "phaeaeng",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "ไปไหน",
+          "english": "go where?",
+          "roman_tone": "painǎi",
+          "phonetic_easy": "pai-nai",
+          "word_type": "question",
+          "classifier": null
+        },
+        {
+          "thai": "ซอย",
+          "english": "alley/soi",
+          "roman_tone": "sɔɔi",
+          "phonetic_easy": "sooi",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ถึง",
+          "english": "arrive",
+          "roman_tone": "thʉ̌ng",
+          "phonetic_easy": "thueng",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ตรงไป",
+          "english": "go straight",
+          "roman_tone": "trongpai",
+          "phonetic_easy": "trong-pai",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เลี้ยว",
+          "english": "turn",
+          "roman_tone": "líaw",
+          "phonetic_easy": "liaw",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ซ้าย",
+          "english": "left",
+          "roman_tone": "sáai",
+          "phonetic_easy": "saai",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ขวา",
+          "english": "right",
+          "roman_tone": "khwǎa",
+          "phonetic_easy": "khwaa",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "แล้วก็",
+          "english": "and then",
+          "roman_tone": "lɛ́ɛo gɔ̂ɔ",
+          "phonetic_easy": "laeaeo goo",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "จอด",
+          "english": "park / stop",
+          "roman_tone": "jɔ̀ɔt",
+          "phonetic_easy": "joot",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "สี่แยก",
+          "english": "intersection",
+          "roman_tone": "sìiyâek",
+          "phonetic_easy": "sii-yaek",
+          "word_type": "noun",
+          "classifier": null
+        }
+      ]
+    },
+    {
+      "category": "Days / Dates / Social",
+      "items": [
+        {
+          "thai": "วัน",
+          "english": "day",
+          "roman_tone": "wan",
+          "phonetic_easy": "wan",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เดือน",
+          "english": "month",
+          "roman_tone": "dʉan",
+          "phonetic_easy": "duean",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ปี",
+          "english": "year",
+          "roman_tone": "pii",
+          "phonetic_easy": "pii",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "วันอาทิตย์",
+          "english": "Sunday",
+          "roman_tone": "wanaathít",
+          "phonetic_easy": "wan-aa-thit",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "วันจันทร์",
+          "english": "Monday",
+          "roman_tone": "wanjan",
+          "phonetic_easy": "wan-jan",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "วันอังคาร",
+          "english": "Tuesday",
+          "roman_tone": "wanangkhaan",
+          "phonetic_easy": "wan-ang-khaan",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "วันพุธ",
+          "english": "Wednesday",
+          "roman_tone": "wanphút",
+          "phonetic_easy": "wan-phut",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "วันพฤหัส",
+          "english": "Thursday",
+          "roman_tone": "wanphréuhàt",
+          "phonetic_easy": "wan-phreu-hat",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "วันศุกร์",
+          "english": "Friday",
+          "roman_tone": "wansùk",
+          "phonetic_easy": "wan-suk",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "วันเสาร์",
+          "english": "Saturday",
+          "roman_tone": "wansǎo",
+          "phonetic_easy": "wan-sao",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "วันนี้",
+          "english": "today",
+          "roman_tone": "wanníi",
+          "phonetic_easy": "wan-nii",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เมื่อวานนี้",
+          "english": "yesterday",
+          "roman_tone": "mʉ̂awaanníi",
+          "phonetic_easy": "muea-waan-nii",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "พรุ่งนี้",
+          "english": "tomorrow",
+          "roman_tone": "phrûngníi",
+          "phonetic_easy": "phrung-nii",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "วันที่",
+          "english": "date",
+          "roman_tone": "wanthîi",
+          "phonetic_easy": "wan-thii",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เกิด",
+          "english": "to be born / happen",
+          "roman_tone": "gèrt",
+          "phonetic_easy": "gert",
+          "word_type": "verb",
+          "classifier": null
+        },
+        {
+          "thai": "วันเกิด",
+          "english": "birthday",
+          "roman_tone": "wangèrt",
+          "phonetic_easy": "wan-gert",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "แต่งงาน",
+          "english": "to marry",
+          "roman_tone": "dtɛ̀ɛngngaan",
+          "phonetic_easy": "dtaeaeng-ngaan",
+          "word_type": "verb",
+          "classifier": null
+        },
+        {
+          "thai": "เวลา",
+          "english": "time",
+          "roman_tone": "weelaa",
+          "phonetic_easy": "wee-laa",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ภรรยา",
+          "english": "wife",
+          "roman_tone": "phanráyaa",
+          "phonetic_easy": "phan-ra-yaa",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        },
+        {
+          "thai": "สามี",
+          "english": "husband",
+          "roman_tone": "sǎamii",
+          "phonetic_easy": "saa-mii",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        },
+        {
+          "thai": "ต้อง",
+          "english": "must / have to",
+          "roman_tone": "dtɔ̂ng",
+          "phonetic_easy": "dtong",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ให้",
+          "english": "to give",
+          "roman_tone": "hâi",
+          "phonetic_easy": "hai",
+          "word_type": "verb",
+          "classifier": null
+        },
+        {
+          "thai": "ของขวัญ",
+          "english": "gift",
+          "roman_tone": "khɔ̌ɔngkhwǎn",
+          "phonetic_easy": "khoong-khwan",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ดอกไม้",
+          "english": "flowers",
+          "roman_tone": "dɔ̀ɔkmáai",
+          "phonetic_easy": "dook-maai",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ทุก",
+          "english": "every",
+          "roman_tone": "thúk",
+          "phonetic_easy": "thuk",
+          "word_type": "quantifier",
+          "classifier": null
+        },
+        {
+          "thai": "หิว",
+          "english": "hungry",
+          "roman_tone": "hǐu",
+          "phonetic_easy": "hiu",
+          "word_type": "adjective",
+          "classifier": null
+        }
+      ]
+    },
+    {
+      "category": "Time & Duration",
+      "items": [
+        {
+          "thai": "จะ",
+          "english": "will / going to",
+          "roman_tone": "jà",
+          "phonetic_easy": "ja",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "กับใคร",
+          "english": "with whom",
+          "roman_tone": "gàp khrai",
+          "phonetic_easy": "gap khrai",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "คนเดียว",
+          "english": "alone",
+          "roman_tone": "khondiao",
+          "phonetic_easy": "khon-diao",
+          "word_type": "phrase",
+          "classifier": null
+        },
+        {
+          "thai": "มาถึง",
+          "english": "arrive (come to)",
+          "roman_tone": "maathʉ̌ng",
+          "phonetic_easy": "maa-thueng",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ออกจาก",
+          "english": "leave from",
+          "roman_tone": "ɔ̀ɔkjàak",
+          "phonetic_easy": "ook-jaak",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "กลับ",
+          "english": "return",
+          "roman_tone": "glàp",
+          "phonetic_easy": "glap",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เมื่อไหร่",
+          "english": "when?",
+          "roman_tone": "mʉ̂arai",
+          "phonetic_easy": "muea-rai",
+          "word_type": "question",
+          "classifier": null
+        },
+        {
+          "thai": "เดือนก่อน",
+          "english": "last month",
+          "roman_tone": "dʉangɔ̀ɔn",
+          "phonetic_easy": "duean-goon",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ปีหน้า",
+          "english": "next year",
+          "roman_tone": "piinâa",
+          "phonetic_easy": "pii-naa",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "อาทิตย์",
+          "english": "week",
+          "roman_tone": "aathít",
+          "phonetic_easy": "aa-thit",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ชั่วโมง",
+          "english": "hour",
+          "roman_tone": "chûamoong",
+          "phonetic_easy": "chua-moong",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "นาที",
+          "english": "minute",
+          "roman_tone": "naathii",
+          "phonetic_easy": "naa-thii",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ครึ่ง",
+          "english": "half",
+          "roman_tone": "khrʉ̂ng",
+          "phonetic_easy": "khrueng",
+          "word_type": "noun",
+          "classifier": null
+        }
+      ]
+    },
+    {
+      "category": "Long time / Confirmation",
+      "items": [
+        {
+          "thai": "นาน",
+          "english": "long time",
+          "roman_tone": "naan",
+          "phonetic_easy": "naan",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "นานเท่าไร",
+          "english": "how long?",
+          "roman_tone": "naanthâorai",
+          "phonetic_easy": "naan-thao-rai",
+          "word_type": "question",
+          "classifier": null
+        },
+        {
+          "thai": "พัก",
+          "english": "stay / rest",
+          "roman_tone": "phák",
+          "phonetic_easy": "phak",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "นานเท่าไรแล้ว",
+          "english": "how long has it been?",
+          "roman_tone": "naanthâorai lɛ́ɛo",
+          "phonetic_easy": "naan-thao-rai laeaeo",
+          "word_type": "question",
+          "classifier": null
+        },
+        {
+          "thai": "อีก",
+          "english": "again / more",
+          "roman_tone": "ìik",
+          "phonetic_easy": "iik",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ใช่ไหม",
+          "english": "right? (confirmation)",
+          "roman_tone": "châi mái",
+          "phonetic_easy": "chai mai",
+          "word_type": "particle",
+          "classifier": null
+        },
+        {
+          "thai": "ใช่",
+          "english": "yes / correct",
+          "roman_tone": "châi",
+          "phonetic_easy": "chai",
+          "word_type": "particle",
+          "classifier": null
+        }
+      ]
+    },
+    {
+      "category": "Parts of day / Activities",
+      "items": [
+        {
+          "thai": "ตอนไหน",
+          "english": "when? (which time)",
+          "roman_tone": "dtonnǎi",
+          "phonetic_easy": "dton-nai",
+          "word_type": "question",
+          "classifier": null
+        },
+        {
+          "thai": "ตอน",
+          "english": "period of time",
+          "roman_tone": "dton",
+          "phonetic_easy": "dton",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ตอนกลางวัน",
+          "english": "daytime",
+          "roman_tone": "dtonglaangwan",
+          "phonetic_easy": "dton-glaang-wan",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ตอนกลางคืน",
+          "english": "nighttime",
+          "roman_tone": "dtonglaangkhʉʉn",
+          "phonetic_easy": "dton-glaang-khueuen",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ตอนเช้า",
+          "english": "morning",
+          "roman_tone": "dtoncháao",
+          "phonetic_easy": "dton-chaao",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ตอนสาย",
+          "english": "late morning",
+          "roman_tone": "dtonsǎai",
+          "phonetic_easy": "dton-saai",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ตอนเที่ยง",
+          "english": "noon time",
+          "roman_tone": "dtonthîang",
+          "phonetic_easy": "dton-thiang",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ตอนบ่าย",
+          "english": "afternoon",
+          "roman_tone": "dtonbàai",
+          "phonetic_easy": "dton-baai",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ตอนเย็น",
+          "english": "evening",
+          "roman_tone": "dtonyen",
+          "phonetic_easy": "dton-yen",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ตอนค่ำ",
+          "english": "dusk",
+          "roman_tone": "dtonkhâm",
+          "phonetic_easy": "dton-kham",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ตอนดึก",
+          "english": "late night",
+          "roman_tone": "dtondʉ̀k",
+          "phonetic_easy": "dton-duek",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ทำไม",
+          "english": "why?",
+          "roman_tone": "thammai",
+          "phonetic_easy": "tham-mai",
+          "word_type": "question",
+          "classifier": null
+        },
+        {
+          "thai": "เพราะว่า",
+          "english": "because",
+          "roman_tone": "phrɔ́wâa",
+          "phonetic_easy": "phro-waa",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "อาหารเช้า",
+          "english": "breakfast",
+          "roman_tone": "aahǎancháao",
+          "phonetic_easy": "aa-haan-chaao",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "อาหารเที่ยง",
+          "english": "lunch",
+          "roman_tone": "aahǎanthîang",
+          "phonetic_easy": "aa-haan-thiang",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "อาหารเย็น",
+          "english": "dinner",
+          "roman_tone": "aahǎanyen",
+          "phonetic_easy": "aa-haan-yen",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "อ่านหนังสือ",
+          "english": "read a book",
+          "roman_tone": "àan nǎngsʉ̌ʉ",
+          "phonetic_easy": "aan nang-sueue",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ดูหนัง",
+          "english": "watch a movie",
+          "roman_tone": "duu nǎng",
+          "phonetic_easy": "duu nang",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ดูทีวี",
+          "english": "watch TV",
+          "roman_tone": "duu thiiwii",
+          "phonetic_easy": "duu thii-wii",
+          "word_type": "noun",
+          "classifier": null
+        }
+      ]
+    },
+    {
+      "category": "Specific clock times",
+      "items": [
+        {
+          "thai": "ตามธรรมดา",
+          "english": "normally / usually",
+          "roman_tone": "dtaam thammádaa",
+          "phonetic_easy": "dtaam tham-ma-daa",
+          "word_type": "adverb",
+          "classifier": null
+        },
+        {
+          "thai": "กี่โมง",
+          "english": "what time?",
+          "roman_tone": "gìi moong",
+          "phonetic_easy": "gii moong",
+          "word_type": "question",
+          "classifier": null
+        },
+        {
+          "thai": "กี่ทุ่ม",
+          "english": "what (PM) hour?",
+          "roman_tone": "gìi thûm",
+          "phonetic_easy": "gii thum",
+          "word_type": "question",
+          "classifier": null
+        },
+        {
+          "thai": "กี่โมงแล้ว",
+          "english": "what time is it now?",
+          "roman_tone": "gìi moong lɛ́ɛo",
+          "phonetic_easy": "gii moong laeaeo",
+          "word_type": "question",
+          "classifier": null
+        },
+        {
+          "thai": "ตีหนึ่ง",
+          "english": "1 AM",
+          "roman_tone": "dtii nʉ̀ng",
+          "phonetic_easy": "dtii nueng",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "หกโมงเช้า",
+          "english": "6 AM",
+          "roman_tone": "hòk moong cháao",
+          "phonetic_easy": "hok moong chaao",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เที่ยง",
+          "english": "noon",
+          "roman_tone": "thîang",
+          "phonetic_easy": "thiang",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "บ่ายโมง",
+          "english": "1 PM",
+          "roman_tone": "bàai moong",
+          "phonetic_easy": "baai moong",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "บ่ายสองโมง",
+          "english": "2 PM",
+          "roman_tone": "bàai sɔ̌ɔng moong",
+          "phonetic_easy": "baai soong moong",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "สี่โมงเย็น",
+          "english": "4 PM",
+          "roman_tone": "sìi moong yen",
+          "phonetic_easy": "sii moong yen",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "หนึ่งทุ่ม",
+          "english": "7 PM",
+          "roman_tone": "nʉ̀ng thûm",
+          "phonetic_easy": "nueng thum",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เที่ยงคืน",
+          "english": "midnight",
+          "roman_tone": "thîang khʉʉn",
+          "phonetic_easy": "thiang khueuen",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "นอน",
+          "english": "sleep",
+          "roman_tone": "nɔɔn",
+          "phonetic_easy": "noon",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เข้านอน",
+          "english": "go to bed",
+          "roman_tone": "khâo nɔɔn",
+          "phonetic_easy": "khao noon",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ตื่น",
+          "english": "wake up",
+          "roman_tone": "dtʉ̀ʉn",
+          "phonetic_easy": "dtueuen",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ครึ่ง",
+          "english": "half",
+          "roman_tone": "khrʉ̂ng",
+          "phonetic_easy": "khrueng",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เหนื่อย",
+          "english": "tired",
+          "roman_tone": "nʉ̀ai",
+          "phonetic_easy": "nueai",
+          "word_type": "adjective",
+          "classifier": null
+        }
+      ]
+    },
+    {
+      "category": "Experience / Taste / Weather / Travel",
+      "items": [
+        {
+          "thai": "เคยไหม",
+          "english": "have you ever...?",
+          "roman_tone": "khooei mái",
+          "phonetic_easy": "khooei mai",
+          "word_type": "question",
+          "classifier": null
+        },
+        {
+          "thai": "เคย",
+          "english": "ever / used to",
+          "roman_tone": "khooei",
+          "phonetic_easy": "khooei",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ต้มยำกุ้ง",
+          "english": "tom yum goong",
+          "roman_tone": "dtômyamgûng",
+          "phonetic_easy": "dtom-yam-gung",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "แต่",
+          "english": "but",
+          "roman_tone": "dtɛ̀ɛ",
+          "phonetic_easy": "dtaeae",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "อร่อย",
+          "english": "delicious",
+          "roman_tone": "àròi",
+          "phonetic_easy": "a-roi",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "เผ็ด",
+          "english": "spicy",
+          "roman_tone": "phèt",
+          "phonetic_easy": "phet",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "หวาน",
+          "english": "sweet",
+          "roman_tone": "wǎan",
+          "phonetic_easy": "waan",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "เค็ม",
+          "english": "salty",
+          "roman_tone": "khem",
+          "phonetic_easy": "khem",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "เปรี้ยว",
+          "english": "sour",
+          "roman_tone": "prîaw",
+          "phonetic_easy": "priaw",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "จืด",
+          "english": "bland",
+          "roman_tone": "jʉ̀ʉt",
+          "phonetic_easy": "jueuet",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "มาก",
+          "english": "very / a lot",
+          "roman_tone": "mâak",
+          "phonetic_easy": "maak",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ไม่ค่อย",
+          "english": "not really / not much",
+          "roman_tone": "mâi khɔ̂i",
+          "phonetic_easy": "mai khoi",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "อยากจะ",
+          "english": "want to",
+          "roman_tone": "yàak jà",
+          "phonetic_easy": "yaak ja",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ครอบครัว",
+          "english": "family",
+          "roman_tone": "khrɔ̂ɔpkhrua",
+          "phonetic_easy": "khroop-khrua",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ไปด้วยกัน",
+          "english": "go together",
+          "roman_tone": "pai dûaygan",
+          "phonetic_easy": "pai duay-gan",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "อากาศ",
+          "english": "weather / air",
+          "roman_tone": "aagàat",
+          "phonetic_easy": "aa-gaat",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ภูเขา",
+          "english": "mountain",
+          "roman_tone": "phuukhǎo",
+          "phonetic_easy": "phuu-khao",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ทะเล",
+          "english": "sea",
+          "roman_tone": "thálee",
+          "phonetic_easy": "tha-lee",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ร้อน",
+          "english": "hot",
+          "roman_tone": "rɔ́ɔn",
+          "phonetic_easy": "roon",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "เย็น",
+          "english": "cool",
+          "roman_tone": "yen",
+          "phonetic_easy": "yen",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "หนาว",
+          "english": "cold",
+          "roman_tone": "nǎao",
+          "phonetic_easy": "naao",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "ถูก",
+          "english": "cheap / correct",
+          "roman_tone": "thùuk",
+          "phonetic_easy": "thuuk",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "แพง",
+          "english": "expensive",
+          "roman_tone": "phɛɛng",
+          "phonetic_easy": "phaeaeng",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "ใหญ่",
+          "english": "big",
+          "roman_tone": "yài",
+          "phonetic_easy": "yai",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "เล็ก",
+          "english": "small",
+          "roman_tone": "lék",
+          "phonetic_easy": "lek",
+          "word_type": "adjective",
+          "classifier": null
+        }
+      ]
+    },
+    {
+      "category": "Pronunciation drills",
+      "items": [
+        {
+          "thai": "การออกเสียง",
+          "english": "pronunciation",
+          "roman_tone": "gaanɔ̀ɔksǐiang",
+          "phonetic_easy": "gaan-ook-siiang",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ฟังดีดี",
+          "english": "listen carefully",
+          "roman_tone": "fang dii dii",
+          "phonetic_easy": "fang dii dii",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ดูดีดี",
+          "english": "look carefully",
+          "roman_tone": "duu dii dii",
+          "phonetic_easy": "duu dii dii",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "คิดดีดี",
+          "english": "think carefully",
+          "roman_tone": "khít dii dii",
+          "phonetic_easy": "khit dii dii",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "พูดดังดัง",
+          "english": "speak loudly",
+          "roman_tone": "phûut dang dang",
+          "phonetic_easy": "phuut dang dang",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "อ่าน",
+          "english": "read",
+          "roman_tone": "àan",
+          "phonetic_easy": "aan",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เขียน",
+          "english": "write",
+          "roman_tone": "khǐan",
+          "phonetic_easy": "khian",
+          "word_type": "noun",
+          "classifier": null
+        }
+      ]
+    },
+    {
+      "category": "Polite requests / Conversation",
+      "items": [
+        {
+          "thai": "ช่วย…หน่อย",
+          "english": "please (do for me)",
+          "roman_tone": "chûay … nɔ̀i",
+          "phonetic_easy": "chuay ... noi",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ช่วย…ด้วยไหม",
+          "english": "could you please...?",
+          "roman_tone": "chûay … dûay mái",
+          "phonetic_easy": "chuay ... duay mai",
+          "word_type": "question",
+          "classifier": null
+        },
+        {
+          "thai": "ช่วย…ด้วยนะ",
+          "english": "please (soft request)",
+          "roman_tone": "chûay … dûay ná",
+          "phonetic_easy": "chuay ... duay na",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "ช้า",
+          "english": "slow",
+          "roman_tone": "cháa",
+          "phonetic_easy": "chaa",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "เร็ว",
+          "english": "fast",
+          "roman_tone": "reo",
+          "phonetic_easy": "reo",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "ถ้า",
+          "english": "if",
+          "roman_tone": "thâa",
+          "phonetic_easy": "thaa",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "บอก",
+          "english": "tell",
+          "roman_tone": "bɔ̀ɔk",
+          "phonetic_easy": "book",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "อธิบาย",
+          "english": "explain",
+          "roman_tone": "àthíbaai",
+          "phonetic_easy": "a-thi-baai",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เข้าใจ",
+          "english": "understand",
+          "roman_tone": "khâo jai",
+          "phonetic_easy": "khao jai",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "อีกที",
+          "english": "again / one more time",
+          "roman_tone": "ìik thii",
+          "phonetic_easy": "iik thii",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เรา",
+          "english": "we / I (informal)",
+          "roman_tone": "rao",
+          "phonetic_easy": "rao",
+          "word_type": "pronoun",
+          "classifier": null
+        },
+        {
+          "thai": "เชิญ",
+          "english": "please / invite",
+          "roman_tone": "chooen",
+          "phonetic_easy": "chooen",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เชิญ…สิ",
+          "english": "go ahead / please (allow)",
+          "roman_tone": "chooen … sì",
+          "phonetic_easy": "chooen ... si",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เข้ามา",
+          "english": "come in",
+          "roman_tone": "khâo maa",
+          "phonetic_easy": "khao maa",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "นั่ง",
+          "english": "sit",
+          "roman_tone": "nâng",
+          "phonetic_easy": "nang",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "รอเดี๋ยว",
+          "english": "wait a sec",
+          "roman_tone": "rɔɔdǐao",
+          "phonetic_easy": "roo-diao",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ไปไหนมา",
+          "english": "where have you been?",
+          "roman_tone": "painǎi maa",
+          "phonetic_easy": "pai-nai maa",
+          "word_type": "question",
+          "classifier": null
+        },
+        {
+          "thai": "ประตู",
+          "english": "door",
+          "roman_tone": "bpràdtuu",
+          "phonetic_easy": "bpra-dtuu",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เปิด",
+          "english": "open",
+          "roman_tone": "bpèrt",
+          "phonetic_easy": "bpert",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ปิด",
+          "english": "close",
+          "roman_tone": "bpìt",
+          "phonetic_easy": "bpit",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ดัง",
+          "english": "loud",
+          "roman_tone": "dang",
+          "phonetic_easy": "dang",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "เบา",
+          "english": "quiet / soft",
+          "roman_tone": "bao",
+          "phonetic_easy": "bao",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "ถาม",
+          "english": "ask",
+          "roman_tone": "thǎam",
+          "phonetic_easy": "thaam",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ตอบ",
+          "english": "answer",
+          "roman_tone": "dtɔ̀ɔp",
+          "phonetic_easy": "dtoop",
+          "word_type": "noun",
+          "classifier": null
+        }
+      ]
+    },
+    {
+      "category": "Family / Relationships / Friends",
+      "items": [
+        {
+          "thai": "ครอบครัว",
+          "english": "family",
+          "roman_tone": "khrɔ̂ɔpkhrua",
+          "phonetic_easy": "khroop-khrua",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "พ่อแม่",
+          "english": "parents",
+          "roman_tone": "phɔ̂ɔmâe",
+          "phonetic_easy": "phoo-mae",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ลูก",
+          "english": "child",
+          "roman_tone": "lûuk",
+          "phonetic_easy": "luuk",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        },
+        {
+          "thai": "ลูกชาย",
+          "english": "son",
+          "roman_tone": "lûuk chaai",
+          "phonetic_easy": "luuk chaai",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        },
+        {
+          "thai": "ลูกสาว",
+          "english": "daughter",
+          "roman_tone": "lûuk sǎao",
+          "phonetic_easy": "luuk saao",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        },
+        {
+          "thai": "พี่ชาย",
+          "english": "older brother",
+          "roman_tone": "phîi chaai",
+          "phonetic_easy": "phii chaai",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        },
+        {
+          "thai": "พี่สาว",
+          "english": "older sister",
+          "roman_tone": "phîi sǎao",
+          "phonetic_easy": "phii saao",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        },
+        {
+          "thai": "น้องชาย",
+          "english": "younger brother",
+          "roman_tone": "nɔ́ɔng chaai",
+          "phonetic_easy": "noong chaai",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        },
+        {
+          "thai": "น้องสาว",
+          "english": "younger sister",
+          "roman_tone": "nɔ́ɔng sǎao",
+          "phonetic_easy": "noong saao",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        },
+        {
+          "thai": "พี่น้อง",
+          "english": "siblings",
+          "roman_tone": "phîinɔ́ɔng",
+          "phonetic_easy": "phii-noong",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ลูกคนที่",
+          "english": "the ___ child",
+          "roman_tone": "lûuk khon thîi",
+          "phonetic_easy": "luuk khon thii",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ลูกคนโต",
+          "english": "first-born",
+          "roman_tone": "lûuk khon dtoo",
+          "phonetic_easy": "luuk khon dtoo",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ลูกคนกลาง",
+          "english": "middle child",
+          "roman_tone": "lûuk khon glaang",
+          "phonetic_easy": "luuk khon glaang",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ลูกคนเล็ก",
+          "english": "youngest",
+          "roman_tone": "lûuk khon lék",
+          "phonetic_easy": "luuk khon lek",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ลูกคนเดียว",
+          "english": "only child",
+          "roman_tone": "lûuk khon diao",
+          "phonetic_easy": "luuk khon diao",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "อายุ",
+          "english": "age",
+          "roman_tone": "aayú",
+          "phonetic_easy": "aa-yu",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ขวบ",
+          "english": "years old (for children)",
+          "roman_tone": "khùap",
+          "phonetic_easy": "khuap",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "แต่งงาน",
+          "english": "marry",
+          "roman_tone": "dtɛ̀ɛngngaan",
+          "phonetic_easy": "dtaeaeng-ngaan",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "แล้วหรือยัง",
+          "english": "already or not yet?",
+          "roman_tone": "lɛ́ɛo rʉ̌ʉ yang",
+          "phonetic_easy": "laeaeo rueue yang",
+          "word_type": "question",
+          "classifier": null
+        },
+        {
+          "thai": "แล้ว",
+          "english": "already",
+          "roman_tone": "lɛ́ɛo",
+          "phonetic_easy": "laeaeo",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ยังไม่",
+          "english": "not yet",
+          "roman_tone": "yang mâi",
+          "phonetic_easy": "yang mai",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ปู่",
+          "english": "grandfather (paternal)",
+          "roman_tone": "bpùu",
+          "phonetic_easy": "bpuu",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        },
+        {
+          "thai": "ย่า",
+          "english": "grandmother (paternal)",
+          "roman_tone": "yâa",
+          "phonetic_easy": "yaa",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        },
+        {
+          "thai": "ตา",
+          "english": "grandfather (maternal)",
+          "roman_tone": "dtaa",
+          "phonetic_easy": "dtaa",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        },
+        {
+          "thai": "ยาย",
+          "english": "grandmother (maternal)",
+          "roman_tone": "yaai",
+          "phonetic_easy": "yaai",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        },
+        {
+          "thai": "แฟน",
+          "english": "boyfriend/girlfriend",
+          "roman_tone": "faen",
+          "phonetic_easy": "faen",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เพื่อน",
+          "english": "friend",
+          "roman_tone": "phʉ̂an",
+          "phonetic_easy": "phuean",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        },
+        {
+          "thai": "เพื่อนนักเรียน",
+          "english": "classmate",
+          "roman_tone": "phʉ̂an nákrian",
+          "phonetic_easy": "phuean nak-rian",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        },
+        {
+          "thai": "เพื่อนบ้าน",
+          "english": "neighbor",
+          "roman_tone": "phʉ̂an bâan",
+          "phonetic_easy": "phuean baan",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        }
+      ]
+    },
+    {
+      "category": "Health / Habits / Traits",
+      "items": [
+        {
+          "thai": "ไม่ค่อยสบาย",
+          "english": "not feeling well",
+          "roman_tone": "mâi khɔ̂i sàbaai",
+          "phonetic_easy": "mai khoi sa-baai",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เป็นอะไร",
+          "english": "what’s wrong?",
+          "roman_tone": "bpen àrai",
+          "phonetic_easy": "bpen a-rai",
+          "word_type": "question",
+          "classifier": null
+        },
+        {
+          "thai": "ปวดท้อง",
+          "english": "stomachache",
+          "roman_tone": "bpùat thɔ́ɔng",
+          "phonetic_easy": "bpuat thoong",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "หัว",
+          "english": "head",
+          "roman_tone": "hǔa",
+          "phonetic_easy": "hua",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "หลัง",
+          "english": "back",
+          "roman_tone": "lǎng",
+          "phonetic_easy": "lang",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ฟัน",
+          "english": "tooth/teeth",
+          "roman_tone": "fan",
+          "phonetic_easy": "fan",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ไปหา",
+          "english": "go see (someone)",
+          "roman_tone": "pai hǎa",
+          "phonetic_easy": "pai haa",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "หมอ",
+          "english": "doctor",
+          "roman_tone": "mɔ̌ɔ",
+          "phonetic_easy": "moo",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "คน",
+            "roman_tone": "khon",
+            "phonetic_easy": "khon"
+          }
+        },
+        {
+          "thai": "ยา",
+          "english": "medicine",
+          "roman_tone": "yaa",
+          "phonetic_easy": "yaa",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ครั้ง",
+          "english": "time/occasion (classifier)",
+          "roman_tone": "khráng",
+          "phonetic_easy": "khrang",
+          "word_type": "noun",
+          "classifier": {
+            "thai": "ครั้ง",
+            "roman_tone": "khráng",
+            "phonetic_easy": "khrang"
+          }
+        },
+        {
+          "thai": "ออกกำลังกาย",
+          "english": "exercise",
+          "roman_tone": "ɔ̀ɔkgamlanggaai",
+          "phonetic_easy": "ook-gam-lang-gaai",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "หลาย",
+          "english": "many",
+          "roman_tone": "lǎai",
+          "phonetic_easy": "laai",
+          "word_type": "quantifier",
+          "classifier": null
+        },
+        {
+          "thai": "บาง",
+          "english": "some",
+          "roman_tone": "baang",
+          "phonetic_easy": "baang",
+          "word_type": "quantifier",
+          "classifier": null
+        },
+        {
+          "thai": "ทุก",
+          "english": "every",
+          "roman_tone": "thúk",
+          "phonetic_easy": "thuk",
+          "word_type": "quantifier",
+          "classifier": null
+        },
+        {
+          "thai": "อย่าง",
+          "english": "kind/type (classifier)",
+          "roman_tone": "yàang",
+          "phonetic_easy": "yaang",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "ขี้เกียจ",
+          "english": "lazy",
+          "roman_tone": "khîigìat",
+          "phonetic_easy": "khii-giat",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "ขยัน",
+          "english": "hardworking",
+          "roman_tone": "khàyǎn",
+          "phonetic_easy": "kha-yan",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "สนุก",
+          "english": "fun",
+          "roman_tone": "sànùk",
+          "phonetic_easy": "sa-nuk",
+          "word_type": "adjective",
+          "classifier": null
+        },
+        {
+          "thai": "โรงพยาบาล",
+          "english": "hospital",
+          "roman_tone": "roongpháyaabaan",
+          "phonetic_easy": "roong-pha-yaa-baan",
+          "word_type": "noun",
+          "classifier": null
+        },
+        {
+          "thai": "เวียนหัว",
+          "english": "dtiian hǔa / dizzy",
+          "roman_tone": "wian hǔa",
+          "phonetic_easy": "wian hua",
+          "word_type": "noun",
+          "classifier": null
+        }
+      ]
+    }
+  ]
+}
