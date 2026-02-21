@@ -1,5 +1,5 @@
 const DATA_PATH = "./thai_vocab_v1.json";
-const BUILD_TAG = "2026-02-21";
+const BUILD_TAG = "2026-02-21b";
 const dataUrl = new URL(DATA_PATH, window.location.href);
 dataUrl.searchParams.set("v", BUILD_TAG);
 const DATA_URL = dataUrl.toString();
@@ -46,7 +46,7 @@ const state = {
   currentIndex: 0,
   flipped: false,
   shuffle: false,
-  srsEnabled: true,
+  srsEnabled: false,
   sessionStarted: false,
   mode: "srs",
   round: 1,
@@ -594,7 +594,7 @@ const applyProfile = (profile) => {
   state.selectedCategories = new Set(settings.categories || []);
   state.mode = "srs";
   state.shuffle = settings.shuffle ?? false;
-  state.srsEnabled = settings.srsEnabled ?? true;
+  state.srsEnabled = settings.srsEnabled ?? false;
   state.frontFields = new Set(settings.frontFields || ["thai", "roman_tone", "phonetic_easy"]);
   state.backFields = new Set(settings.backFields || ["english", "roman_tone"]);
   state.bigFieldFront = settings.bigFieldFront || "roman_tone";
@@ -623,6 +623,7 @@ const persistSettings = () => {
     bigFieldFront: state.bigFieldFront,
     bigFieldBack: state.bigFieldBack,
   };
+  profile.settings = settings;
   profile.srsState = state.srsState;
   profile.lastUsed = new Date().toISOString();
   saveProfiles();
@@ -797,6 +798,7 @@ els.setupToggle.addEventListener("click", () => {
     state.sessionStarted = false;
     document.querySelector(".app").classList.remove("in-session");
     setSetupCollapsed(false);
+    renderCategories();
     updateSelectionCounts();
     updateSetupSummary();
     updateTopbar();
@@ -817,6 +819,7 @@ els.exitSummaryBtn.addEventListener("click", () => {
   state.sessionStarted = false;
   document.querySelector(".app").classList.remove("in-session");
   setSetupCollapsed(false);
+  renderCategories();
   updateSelectionCounts();
   updateSetupSummary();
   updateTopbar();

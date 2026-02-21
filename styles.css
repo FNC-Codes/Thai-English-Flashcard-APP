@@ -29,6 +29,7 @@ body {
   overflow-x: hidden;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 html {
@@ -95,6 +96,10 @@ html {
 
 .app.in-session {
   gap: 16px;
+}
+
+.app.in-session .profile-bar {
+  display: none;
 }
 
 .session-info .hidden {
