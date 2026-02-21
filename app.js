@@ -102,6 +102,30 @@ const closeEditModal = () => {
   els.editModal.classList.remove("show");
 };
 
+const speakText = (text, lang) => {
+  if (!text) return;
+  if (!("speechSynthesis" in window) || typeof SpeechSynthesisUtterance === "undefined") {
+    setStatus("Text-to-speech not supported on this browser.");
+    return;
+  }
+  try {
+    window.speechSynthesis.cancel();
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = lang;
+    window.speechSynthesis.speak(utter);
+  } catch {
+    setStatus("Text-to-speech failed.");
+  }
+};
+
+const speakCurrentCard = () => {
+  if (!state.sessionStarted || state.deck.length === 0) return;
+  const card = state.deck[state.currentIndex];
+  if (!card) return;
+  if (state.flipped) speakText((card.english || "").toString(), "en-US");
+  else speakText((card.thai || "").toString(), "th-TH");
+};
+
 const saveEdit = async () => {
   if (!state.sessionStarted || state.deck.length === 0) return;
   if (!state.backendAvailable) {
@@ -161,6 +185,7 @@ const els = {
   correctBtn: document.getElementById("correctBtn"),
   cardTracker: document.getElementById("cardTracker"),
   sessionStatus: document.getElementById("sessionStatus"),
+  ttsBtn: document.getElementById("ttsBtn"),
   editCardBtn: document.getElementById("editCardBtn"),
   editModal: document.getElementById("editModal"),
   editThai: document.getElementById("editThai"),
@@ -690,6 +715,14 @@ els.flashcard.addEventListener("click", () => {
   state.flipped = !state.flipped;
   applyFlip();
 });
+
+if (els.ttsBtn) {
+  els.ttsBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    speakCurrentCard();
+  });
+}
 
 els.shuffleToggle.addEventListener("change", (event) => {
   state.shuffle = event.target.checked;
