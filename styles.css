@@ -78,10 +78,7 @@ html {
   line-height: 1;
 }
 
-.session-controls__left {
-  display: flex;
-  justify-content: flex-start;
-}
+
 
 @media (max-width: 768px) {
   .app {
@@ -631,8 +628,9 @@ button:disabled {
   background: #0f131b;
   border: 1px solid var(--border);
   border-radius: 12px;
-  color: var(--text);
   padding: 10px 12px;
+  color: var(--text);
+  font-size: 16px;
   font-family: inherit;
 }
 
@@ -652,8 +650,9 @@ button:disabled {
   background: #0f131b;
   border: 1px solid var(--border);
   border-radius: 12px;
-  color: var(--text);
   padding: 10px 12px;
+  color: var(--text);
+  font-size: 16px;
   font-family: inherit;
 }
 

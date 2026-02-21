@@ -114,6 +114,30 @@ const pickVoice = (lang) => {
   return null;
 };
 
+let voicesLoaded = false;
+
+const initVoices = () => {
+  if (!("speechSynthesis" in window)) return;
+  const synth = window.speechSynthesis;
+  const load = () => {
+    const voices = synth.getVoices ? synth.getVoices() : [];
+    if (voices && voices.length) voicesLoaded = true;
+  };
+  load();
+  if (typeof synth.addEventListener === "function") {
+    synth.addEventListener("voiceschanged", load);
+  }
+  setTimeout(load, 200);
+};
+
+const hasVoiceForLang = (lang) => {
+  if (!("speechSynthesis" in window)) return false;
+  const synth = window.speechSynthesis;
+  const voices = synth.getVoices ? synth.getVoices() : [];
+  if (!voices || voices.length === 0) return false;
+  return Boolean(pickVoice(lang));
+};
+
 const speakText = (text, lang) => {
   if (!text) return;
   if (!("speechSynthesis" in window) || typeof SpeechSynthesisUtterance === "undefined") {
@@ -126,6 +150,10 @@ const speakText = (text, lang) => {
       synth.cancel();
       const utter = new SpeechSynthesisUtterance(text);
       utter.lang = lang;
+      if (lang.toLowerCase().startsWith("th")) {
+        utter.rate = 0.95;
+        utter.pitch = 1.0;
+      }
       const voice = pickVoice(lang);
       if (voice) utter.voice = voice;
       synth.speak(utter);
@@ -136,7 +164,7 @@ const speakText = (text, lang) => {
 
   const voices = synth.getVoices ? synth.getVoices() : [];
   if (!voices || voices.length === 0) {
-    setTimeout(doSpeak, 80);
+    setTimeout(doSpeak, 200);
   } else {
     doSpeak();
   }
@@ -146,8 +174,34 @@ const speakCurrentCard = () => {
   if (!state.sessionStarted || state.deck.length === 0) return;
   const card = state.deck[state.currentIndex];
   if (!card) return;
-  if (state.flipped) speakText((card.english || "").toString(), "en-US");
-  else speakText((card.thai || "").toString(), "th-TH");
+  const thaiText = (card.thai || "").toString();
+  if (voicesLoaded && hasVoiceForLang("th-TH")) {
+    speakText(thaiText, "th-TH");
+    return;
+  }
+  if (!voicesLoaded) {
+    setTimeout(() => {
+      if (hasVoiceForLang("th-TH")) speakText(thaiText, "th-TH");
+      else {
+        const roman = (card.roman_tone || "").toString();
+        if (roman) {
+          setStatus("Thai voice not available on this PC. Speaking romanization instead.");
+          speakText(roman, "en-US");
+        } else {
+          setStatus("Thai voice not available on this PC.");
+        }
+      }
+    }, 250);
+    return;
+  }
+
+  const roman = (card.roman_tone || "").toString();
+  if (roman) {
+    setStatus("Thai voice not available on this PC. Speaking romanization instead.");
+    speakText(roman, "en-US");
+  } else {
+    setStatus("Thai voice not available on this PC.");
+  }
 };
 
 const saveEdit = async () => {
@@ -224,6 +278,8 @@ const els = {
   setupSummary: document.getElementById("setupSummary"),
   modeGroup: document.getElementById("modeGroup"),
   profileModal: document.getElementById("profileModal"),
+  summaryModal: document.getElementById("summaryModal"),
+  summaryTop: document.getElementById("summaryTop"),
   summaryList: document.getElementById("summaryList"),
   reviewWrongBtn: document.getElementById("reviewWrongBtn"),
   exitSummaryBtn: document.getElementById("exitSummaryBtn"),
@@ -696,6 +752,7 @@ const ensureProfile = () => {
 };
 
 const init = async () => {
+  initVoices();
   try {
     const response = await fetch(DATA_API).catch(() => null);
     state.backendAvailable = FORCE_STATIC ? false : Boolean(response && response.ok);
