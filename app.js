@@ -19,6 +19,10 @@ const FIELD_DEFS = [
   { key: "phonetic_easy", label: "Phonetic", className: "field-phonetic" },
 ];
 
+const IS_DESKTOP = window.matchMedia
+  ? window.matchMedia("(hover: hover) and (pointer: fine)").matches
+  : false;
+
 const state = {
   rawCategories: [],
   selectedCategories: new Set(),
@@ -752,7 +756,7 @@ const ensureProfile = () => {
 };
 
 const init = async () => {
-  initVoices();
+  if (!IS_DESKTOP) initVoices();
   try {
     const response = await fetch(DATA_API).catch(() => null);
     state.backendAvailable = FORCE_STATIC ? false : Boolean(response && response.ok);
@@ -798,7 +802,7 @@ els.flashcard.addEventListener("click", (event) => {
   applyFlip();
 });
 
-if (els.ttsBtn) {
+if (!IS_DESKTOP && els.ttsBtn) {
   els.ttsBtn.addEventListener("click", (event) => {
     event.preventDefault();
     event.stopPropagation();

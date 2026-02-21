@@ -38,15 +38,10 @@ html {
   overflow-x: hidden;
 }
 
-.app {
-  max-width: 100vw;
-  margin: 0 auto;
-}
-
 @media (max-width: 768px) {
   body {
     display: block;
-    padding: 16px calc(12px + env(safe-area-inset-right)) 28px calc(12px + env(safe-area-inset-left));
+    padding: 16px 12px 28px;
   }
 }
 
@@ -76,6 +71,12 @@ html {
   content: "🔊";
   font-size: 18px;
   line-height: 1;
+}
+
+@media (min-width: 769px) {
+  .tts-btn {
+    display: none;
+  }
 }
 
 
