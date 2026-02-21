@@ -71,7 +71,6 @@
           </span>
         </div>
         <div class="card" id="flashcard">
-          <button id="ttsBtn" class="tts-btn" type="button" aria-label="Speak">Speak</button>
           <div class="card-face" id="cardFront">
             <div class="card-fields" id="frontFieldsView"></div>
             <div class="hint" id="frontHint">Tap to flip</div>
@@ -81,7 +80,9 @@
           </div>
         </div>
         <div class="session-controls">
-          <div class="session-controls__spacer" aria-hidden="true"></div>
+          <div class="session-controls__left">
+            <button id="ttsBtn" class="tts-btn" type="button" aria-label="Speak">Speak</button>
+          </div>
           <div class="session-controls__center">
             <button id="wrongBtn" class="danger">Wrong</button>
             <button id="correctBtn" class="success">Correct</button>

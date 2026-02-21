@@ -102,19 +102,43 @@ const closeEditModal = () => {
   els.editModal.classList.remove("show");
 };
 
+const pickVoice = (lang) => {
+  const synth = window.speechSynthesis;
+  const voices = synth.getVoices ? synth.getVoices() : [];
+  if (!voices || voices.length === 0) return null;
+  const target = lang.toLowerCase();
+  const exact = voices.find((v) => (v.lang || "").toLowerCase() === target);
+  if (exact) return exact;
+  const prefix = voices.find((v) => (v.lang || "").toLowerCase().startsWith(`${target.split("-")[0]}-`));
+  if (prefix) return prefix;
+  return null;
+};
+
 const speakText = (text, lang) => {
   if (!text) return;
   if (!("speechSynthesis" in window) || typeof SpeechSynthesisUtterance === "undefined") {
     setStatus("Text-to-speech not supported on this browser.");
     return;
   }
-  try {
-    window.speechSynthesis.cancel();
-    const utter = new SpeechSynthesisUtterance(text);
-    utter.lang = lang;
-    window.speechSynthesis.speak(utter);
-  } catch {
-    setStatus("Text-to-speech failed.");
+  const synth = window.speechSynthesis;
+  const doSpeak = () => {
+    try {
+      synth.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = lang;
+      const voice = pickVoice(lang);
+      if (voice) utter.voice = voice;
+      synth.speak(utter);
+    } catch {
+      setStatus("Text-to-speech failed.");
+    }
+  };
+
+  const voices = synth.getVoices ? synth.getVoices() : [];
+  if (!voices || voices.length === 0) {
+    setTimeout(doSpeak, 80);
+  } else {
+    doSpeak();
   }
 };
 
@@ -710,8 +734,9 @@ const init = async () => {
   }
 };
 
-els.flashcard.addEventListener("click", () => {
+els.flashcard.addEventListener("click", (event) => {
   if (!state.sessionStarted) return;
+  if (event.target && event.target.closest && event.target.closest("#ttsBtn")) return;
   state.flipped = !state.flipped;
   applyFlip();
 });
