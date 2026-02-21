@@ -841,8 +841,9 @@ els.createProfileBtn.addEventListener("click", () => {
     createdAt: new Date().toISOString(),
     lastUsed: new Date().toISOString(),
     settings: {
-      categories: [],
+      categories: ["Greetings / Basics"],
       shuffle: false,
+      srsEnabled: false,
       frontFields: ["thai", "roman_tone", "phonetic_easy"],
       backFields: ["english", "roman_tone"],
       bigFieldFront: "roman_tone",
