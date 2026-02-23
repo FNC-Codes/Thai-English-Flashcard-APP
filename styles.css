@@ -836,12 +836,17 @@ button:disabled {
 
 /* ===== BOTTOM THEME TOGGLE ===== */
 .bottom-theme-toggle {
-  display: flex;
+  display: none;
   align-self: flex-start;
+}
+
+.app.in-session .bottom-theme-toggle {
+  display: flex;
 }
 
 @media (max-width: 768px) {
   .bottom-theme-toggle {
+    display: flex;
     align-self: center;
   }
 }

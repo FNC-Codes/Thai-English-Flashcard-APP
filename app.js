@@ -406,7 +406,7 @@ const buildDeck = () => {
   if (state.deck.length === 0) {
     setStatus(state.srsEnabled ? "No due cards right now." : "No cards available. Select more categories.");
   } else {
-    setStatus("Session started. Rate each card.");
+    setStatus("");
   }
 };
 
@@ -752,9 +752,9 @@ const init = async () => {
     updateTopbar();
     updateCard();
     if (state.rawCategories.length === 0) {
-      setStatus("Loaded 0 categories. Check that the JSON has a 'categories' array.");
+      setStatus("Check that the JSON has a 'categories' array.");
     } else {
-      setStatus(`Loaded ${state.rawCategories.length} categories.`);
+      setStatus("");
     }
     updateSetupSummary();
     updateSelectionCounts();
