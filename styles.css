@@ -46,15 +46,14 @@ html {
 }
 
 .tts-btn {
-  width: 44px;
-  height: 44px;
-  padding: 0;
+  padding: 12px 18px;
   border-radius: 999px;
   border: 1px solid var(--accent);
   background: var(--accent);
   color: #3B2A1A;
   display: grid;
   place-items: center;
+  font-weight: 600;
 }
 
 .tts-btn:active {
@@ -409,7 +408,8 @@ button:disabled {
   position: absolute;
   inset: 0;
   border-radius: 22px;
-  background: linear-gradient(145deg, rgba(244, 163, 0, 0.12), rgba(47, 107, 61, 0.08));
+  background: #F7F1E3;
+  background-image: linear-gradient(135deg, rgba(244, 163, 0, 0.15) 0%, transparent 30%, transparent 70%, rgba(47, 107, 61, 0.15) 100%);
   border: 1px solid rgba(244, 163, 0, 0.25);
   display: flex;
   flex-direction: column;
@@ -478,8 +478,9 @@ button:disabled {
 
 .card-face#cardBack {
   transform: rotateY(180deg);
-  background: linear-gradient(145deg, rgba(47, 107, 61, 0.08), rgba(244, 163, 0, 0.15));
-  border-color: rgba(244, 163, 0, 0.35);
+  background: #F7F1E3;
+  background-image: linear-gradient(135deg, rgba(47, 107, 61, 0.15) 0%, transparent 30%, transparent 70%, rgba(244, 163, 0, 0.15) 100%);
+  border-color: rgba(47, 107, 61, 0.3);
 }
 
 .card-face#cardBack .card-fields {
@@ -645,6 +646,13 @@ button:disabled {
   box-shadow: 0 3px 10px rgba(47, 107, 61, 0.3);
 }
 
+.session-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
 .status {
   text-align: center;
   color: var(--muted);
@@ -701,6 +709,8 @@ button:disabled {
   .field-item {
     min-width: 0;
     max-width: 100%;
+    padding: 6px 10px;
+    font-size: 0.85rem;
   }
 
   .category-controls {
@@ -822,6 +832,18 @@ button:disabled {
 
 .theme-label {
   user-select: none;
+}
+
+/* ===== BOTTOM THEME TOGGLE ===== */
+.bottom-theme-toggle {
+  display: flex;
+  align-self: flex-start;
+}
+
+@media (max-width: 768px) {
+  .bottom-theme-toggle {
+    align-self: center;
+  }
 }
 
 /* ===== DARK MODE — Teak House at Night ===== */

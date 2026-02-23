@@ -1,18 +1,19 @@
 const THEME_KEY = "thaiFlashTheme";
-(function initTheme() {
-  const saved = localStorage.getItem(THEME_KEY);
-  if (saved === "dark") {
-    document.body.classList.add("dark-mode");
-    document.getElementById("themeToggle").checked = true;
-    document.querySelector(".theme-label").textContent = "Dark Mode";
-  }
-})();
-document.getElementById("themeToggle").addEventListener("change", (e) => {
-  const isDark = e.target.checked;
+function applyTheme(isDark) {
   document.body.classList.toggle("dark-mode", isDark);
   localStorage.setItem(THEME_KEY, isDark ? "dark" : "light");
-  document.querySelector(".theme-label").textContent = isDark ? "Dark Mode" : "Light Mode";
-});
+  document.getElementById("themeToggle").checked = isDark;
+  const btm = document.getElementById("bottomThemeToggle");
+  if (btm) btm.checked = isDark;
+  document.querySelectorAll(".theme-label").forEach(el => el.textContent = isDark ? "Dark Mode" : "Light Mode");
+}
+(function initTheme() {
+  const saved = localStorage.getItem(THEME_KEY);
+  if (saved === "dark") applyTheme(true);
+})();
+document.getElementById("themeToggle").addEventListener("change", (e) => applyTheme(e.target.checked));
+const btmToggle = document.getElementById("bottomThemeToggle");
+if (btmToggle) btmToggle.addEventListener("change", (e) => applyTheme(e.target.checked));
 
 const DATA_PATH = "./thai_vocab_v1.json";
 const BUILD_TAG = "2026-02-21b";

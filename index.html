@@ -19,7 +19,7 @@
         <div class="setup-header">
           <div>
             <h1>Thai Flashcards</h1>
-            <p class="muted" style="font-weight:700">Choose your settings. <span style="color:#F4A300">Use Mobile if you want text-to-speech for Thai.</span> Get 100% in a section to earn a <span style="color:#F4A300">MANGO!!!</span></p>
+            <p class="muted" style="font-weight:700; margin-bottom:24px"><span style="color:#F4A300">Use Mobile if you want text-to-speech for Thai.</span> Get 100% in a section to earn a <span style="color:#F4A300">MANGO!!!</span></p>
           </div>
           <div class="header-right">
             <span class="profile-bar">
@@ -97,7 +97,16 @@
             <div class="card-tracker" id="cardTracker">0 / 0</div>
           </div>
         </div>
-        <div class="status" id="sessionStatus">Select categories to begin.</div>
+        <div class="session-footer">
+          <div class="status" id="sessionStatus">Select categories to begin.</div>
+          <div class="bottom-theme-toggle">
+            <label class="theme-switch" title="Toggle dark mode">
+              <span class="theme-label bottom-theme-label">Light Mode</span>
+              <input type="checkbox" id="bottomThemeToggle" />
+              <span class="theme-slider"></span>
+            </label>
+          </div>
+        </div>
       </section>
     </div>
 
