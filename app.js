@@ -63,11 +63,11 @@ const state = {
   profiles: [],
   activeProfileId: null,
   srsState: {},
+  mastered: new Set(),
   backendAvailable: false,
 };
 
 const updateSelectionCounts = () => {
-  if (state.sessionStarted) return;
   const selected = state.selectedCategories.size
     ? state.rawCategories.filter((cat) => state.selectedCategories.has(cat.category))
     : state.rawCategories;
@@ -82,7 +82,6 @@ const updateSelectionCounts = () => {
         return sum + due;
       }, 0)
     : total;
-  els.cardTracker.textContent = `${available} / ${total}`;
   els.progressText.textContent = `${available} / ${total}`;
 };
 
@@ -219,6 +218,7 @@ const els = {
   selectAllBtn: document.getElementById("selectAllBtn"),
   clearAllBtn: document.getElementById("clearAllBtn"),
   startBtn: document.getElementById("startBtn"),
+  mangoCounter: document.getElementById("mangoCounter"),
   categoryList: document.getElementById("categoryList"),
   cardSection: document.getElementById("cardSection"),
   flashcard: document.getElementById("flashcard"),
@@ -286,13 +286,11 @@ const setStatus = (text) => {
 };
 
 const updateTopbar = () => {
-  const total = state.deck.length;
-  const current = total === 0 ? 0 : state.currentIndex + 1;
-  els.progressText.textContent = `${current} / ${total}`;
+  const deckSize = state.deck.length;
+  const current = deckSize === 0 ? 0 : state.currentIndex + 1;
+  updateSelectionCounts();
   if (state.sessionStarted) {
-    els.cardTracker.textContent = `${current} / ${total}`;
-  } else {
-    updateSelectionCounts();
+    els.cardTracker.textContent = `${current} / ${deckSize}`;
   }
   if (state.selectedCategories.size === 0) {
     els.activeCategories.textContent = "All categories";
@@ -435,7 +433,7 @@ const handleRating = (quality) => {
 const renderSummary = () => {
   const { right, wrong, total, perCategory } = state.sessionStats;
   const percent = total === 0 ? 0 : Math.round((right / total) * 100);
-  els.summaryTop.textContent = `${right} right • ${wrong} wrong • ${percent}%`;
+  els.summaryTop.innerHTML = `<span style="color:#2F6B3D">${right} right</span> • <span style="color:#D94F4F">${wrong} wrong</span> • ${percent}%`;
   els.summaryList.innerHTML = "";
   Object.entries(perCategory).forEach(([category, stats]) => {
     const item = document.createElement("div");
@@ -443,7 +441,7 @@ const renderSummary = () => {
     const name = document.createElement("span");
     name.textContent = category;
     const counts = document.createElement("span");
-    counts.textContent = `${stats.right} right / ${stats.wrong} wrong`;
+    counts.innerHTML = `<span style="color:#2F6B3D">${stats.right} right</span> / <span style="color:#D94F4F">${stats.wrong} wrong</span>`;
     item.appendChild(name);
     item.appendChild(counts);
     els.summaryList.appendChild(item);
@@ -452,6 +450,14 @@ const renderSummary = () => {
 };
 
 const openSummary = () => {
+  const { perCategory } = state.sessionStats;
+  Object.entries(perCategory).forEach(([category, stats]) => {
+    const cat = state.rawCategories.find((c) => c.category === category);
+    if (cat && stats.wrong === 0 && stats.right === cat.items.length) {
+      state.mastered.add(category);
+    }
+  });
+  persistSettings();
   renderSummary();
   els.summaryModal.classList.add("show");
   setStatus("Session complete.");
@@ -518,9 +524,19 @@ const renderCategories = () => {
     label.appendChild(name);
 
     wrapper.appendChild(label);
-    
+
+    if (state.mastered.has(cat.category)) {
+      const badge = document.createElement("span");
+      badge.className = "mango-badge";
+      badge.textContent = "🥭";
+      wrapper.appendChild(badge);
+    }
+
     els.categoryList.appendChild(wrapper);
   });
+  const masteredCount = state.mastered.size;
+  const totalCategories = state.rawCategories.length;
+  els.mangoCounter.textContent = `${masteredCount} / ${totalCategories} \uD83E\uDD6D`;
 };
 
 const renderFieldToggles = (target, activeSet, side) => {
@@ -600,6 +616,7 @@ const applyProfile = (profile) => {
   state.bigFieldFront = settings.bigFieldFront || "roman_tone";
   state.bigFieldBack = settings.bigFieldBack || "english";
   state.srsState = profile.srsState || {};
+  state.mastered = new Set(profile.mastered || []);
   els.shuffleToggle.checked = state.shuffle;
   els.srsToggle.checked = state.srsEnabled;
   renderFieldToggles(els.frontFields, state.frontFields, "front");
@@ -625,6 +642,7 @@ const persistSettings = () => {
   };
   profile.settings = settings;
   profile.srsState = state.srsState;
+  profile.mastered = Array.from(state.mastered);
   profile.lastUsed = new Date().toISOString();
   saveProfiles();
 };
@@ -748,6 +766,13 @@ els.flashcard.addEventListener("click", (event) => {
 });
 
 
+document.getElementById("srsHelpBtn").addEventListener("click", () => {
+  document.getElementById("srsHelpModal").classList.add("show");
+});
+document.getElementById("srsHelpCloseBtn").addEventListener("click", () => {
+  document.getElementById("srsHelpModal").classList.remove("show");
+});
+
 els.shuffleToggle.addEventListener("change", (event) => {
   state.shuffle = event.target.checked;
   updateSetupSummary();
@@ -798,6 +823,7 @@ els.setupToggle.addEventListener("click", () => {
     state.sessionStarted = false;
     document.querySelector(".app").classList.remove("in-session");
     setSetupCollapsed(false);
+    els.setupToggle.classList.add("hidden");
     renderCategories();
     updateSelectionCounts();
     updateSetupSummary();
@@ -819,6 +845,7 @@ els.exitSummaryBtn.addEventListener("click", () => {
   state.sessionStarted = false;
   document.querySelector(".app").classList.remove("in-session");
   setSetupCollapsed(false);
+  els.setupToggle.classList.add("hidden");
   renderCategories();
   updateSelectionCounts();
   updateSetupSummary();

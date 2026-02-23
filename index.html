@@ -19,11 +19,11 @@
         <div class="setup-header">
           <div>
             <h1>Thai Flashcards</h1>
-            <p class="muted">Pick your study mode, fields, and categories to begin.</p>
+            <p class="muted">Choose your settings. <strong>Use Mobile if you want text-to-speech for Thai.</strong> Get <strong>100%</strong> in a section to earn a <strong style="color:#F4A300; text-shadow: 1px 1px 4px rgba(244, 163, 0, 0.5)">MANGO</strong><strong style="color:#F4A300">!!!</strong></p>
           </div>
           <span class="profile-bar">
             <span class="muted">Profile:</span>
-            <span id="activeProfile">—</span>
+            <strong id="activeProfile" style="margin-right:5px">—</strong>
             <button id="switchProfileBtn" class="ghost small">Switch</button>
           </span>
         </div>
@@ -43,10 +43,13 @@
               <input type="checkbox" id="shuffleToggle" />
               <span>Shuffle</span>
             </label>
-            <label class="toggle">
-              <input type="checkbox" id="srsToggle" />
-              <span>Spaced repetition</span>
-            </label>
+            <span style="display:inline-flex; align-items:center; gap:6px;">
+              <label class="toggle">
+                <input type="checkbox" id="srsToggle" />
+                <span>Spaced repetition</span>
+              </label>
+              <button id="srsHelpBtn" class="help-btn" title="What is Spaced Repetition?">?</button>
+            </span>
             <button id="resetSrsBtn" class="ghost small">Reset SRS</button>
           </div>
         </div>
@@ -57,13 +60,14 @@
         <div id="categoryList" class="category-list"></div>
         <div class="category-start">
           <button id="startBtn" class="primary">Start Session</button>
+          <span id="mangoCounter" class="mango-counter">🥭 0 / 0</span>
         </div>
       </section>
 
       <section class="card-section" id="cardSection">
         <div class="session-info">
           <span id="progressText">0 / 0</span>
-          <span class="dot">•</span>
+          <span class="dot">🥭</span>
           <span id="activeCategories">All categories</span>
           <button id="setupToggle" class="ghost small hidden" aria-expanded="true">Change flash cards</button>
         </div>
@@ -110,6 +114,23 @@
           <button id="reviewWrongBtn" class="primary">Review Wrong Cards</button>
           <button id="exitSummaryBtn" class="ghost">Exit</button>
         </div>
+      </div>
+    </div>
+
+    <div class="modal" id="srsHelpModal">
+      <div class="modal-card">
+        <h2>What is Spaced Repetition?</h2>
+        <div class="srs-help-content">
+          <p>Spaced repetition (SRS) is a study method that shows you cards at increasing intervals based on how well you know them.</p>
+          <ul>
+            <li>Cards you get <strong>wrong</strong> are shown again sooner</li>
+            <li>Cards you get <strong>right</strong> are spaced out further into the future</li>
+            <li>This focuses your study time on the cards you struggle with most</li>
+          </ul>
+          <p>When SRS is enabled, only "due" cards appear in your session. The count next to each category shows how many cards are due vs total (e.g., 5/19 means 5 cards are due out of 19).</p>
+          <p>Turn SRS <strong>off</strong> to practice all cards regardless of schedule.</p>
+        </div>
+        <button id="srsHelpCloseBtn" class="ghost">Got it</button>
       </div>
     </div>
 

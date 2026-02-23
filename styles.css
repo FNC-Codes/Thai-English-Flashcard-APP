@@ -86,6 +86,10 @@ html {
   flex-wrap: wrap;
 }
 
+.session-info .dot {
+  filter: drop-shadow(2px 3px 3px rgba(59, 42, 26, 0.4));
+}
+
 
 .app.in-session #setupSection {
   display: none;
@@ -130,9 +134,10 @@ html {
   background: var(--panel);
   border-radius: 22px;
   padding: 24px;
-  border: 1px solid var(--border);
+  border: 2px solid rgba(47, 107, 61, 0.3);
   display: grid;
   gap: 18px;
+  box-shadow: 0 4px 16px rgba(59, 42, 26, 0.10);
 }
 
 .setup-grid {
@@ -149,6 +154,7 @@ html {
   padding: 18px;
   display: grid;
   gap: 12px;
+  box-shadow: 0 2px 8px rgba(59, 42, 26, 0.08);
 }
 
 .setup-block h2 {
@@ -228,12 +234,61 @@ button:disabled {
 .primary {
   background: var(--accent);
   color: #3B2A1A;
+  box-shadow: 0 3px 10px rgba(244, 163, 0, 0.3);
 }
 
 .ghost {
-  background: transparent;
+  background: rgba(47, 107, 61, 0.12);
   color: var(--text);
+  border: 1px solid rgba(47, 107, 61, 0.3);
+}
+
+#resetSrsBtn {
+  background: rgba(166, 30, 42, 0.12);
+  border: 1px solid rgba(166, 30, 42, 0.3);
+  color: #A61E2A;
+}
+
+#setupToggle {
+  background: transparent;
   border: 1px solid var(--border);
+}
+
+.help-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.srs-help-content {
+  text-align: left;
+  line-height: 1.6;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.srs-help-content ul {
+  margin: 12px 0;
+  padding-left: 20px;
+}
+
+.srs-help-content li {
+  margin-bottom: 6px;
+}
+
+.srs-help-content p {
+  margin: 10px 0;
 }
 
 
@@ -252,6 +307,7 @@ button:disabled {
   border: 1px solid var(--border);
   background: rgba(232, 220, 200, 0.5);
   justify-content: space-between;
+  box-shadow: 0 1px 4px rgba(59, 42, 26, 0.06);
 }
 
 .field-item span {
@@ -274,7 +330,18 @@ button:disabled {
 .category-start {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-top: 16px;
+  position: relative;
+}
+
+.mango-counter {
+  position: absolute;
+  right: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+  font-weight: 600;
+  filter: drop-shadow(1px 2px 2px rgba(59, 42, 26, 0.3));
 }
 
 .category-item {
@@ -287,6 +354,17 @@ button:disabled {
   align-items: center;
   gap: 12px;
   max-width: 100%;
+  box-shadow: 0 2px 6px rgba(59, 42, 26, 0.07);
+  position: relative;
+}
+
+.mango-badge {
+  position: absolute;
+  top: -10px;
+  right: -6px;
+  font-size: 1.3rem;
+  filter: drop-shadow(2px 3px 3px rgba(59, 42, 26, 0.4));
+  pointer-events: none;
 }
 
 .category-item label {
@@ -304,7 +382,7 @@ button:disabled {
   background: var(--panel);
   border-radius: 26px;
   padding: 36px;
-  border: 1px solid var(--border);
+  border: 2px solid rgba(47, 107, 61, 0.3);
   display: grid;
   gap: 24px;
   box-shadow: var(--shadow);
@@ -316,6 +394,7 @@ button:disabled {
   min-height: 340px;
   perspective: 1400px;
   cursor: pointer;
+  filter: drop-shadow(0 6px 24px rgba(59, 42, 26, 0.15));
 }
 
 .card-face {
@@ -454,6 +533,7 @@ button:disabled {
   border-radius: 14px;
   border: 1px solid var(--border);
   background: var(--panel-2);
+  box-shadow: 0 2px 6px rgba(59, 42, 26, 0.07);
 }
 
 .profile-actions {
@@ -542,16 +622,19 @@ button:disabled {
   color: var(--muted);
   font-weight: 600;
   background: rgba(232, 220, 200, 0.6);
+  box-shadow: 0 2px 6px rgba(59, 42, 26, 0.08);
 }
 
 .danger {
   background: var(--danger);
   color: #ffffff;
+  box-shadow: 0 3px 10px rgba(217, 79, 79, 0.3);
 }
 
 .success {
   background: var(--success);
   color: #ffffff;
+  box-shadow: 0 3px 10px rgba(47, 107, 61, 0.3);
 }
 
 .status {
