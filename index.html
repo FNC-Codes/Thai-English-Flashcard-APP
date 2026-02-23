@@ -21,11 +21,18 @@
             <h1>Thai Flashcards</h1>
             <p class="muted">Choose your settings. <strong>Use Mobile if you want text-to-speech for Thai.</strong> Get <strong>100%</strong> in a section to earn a <strong style="color:#F4A300; text-shadow: 1px 1px 4px rgba(244, 163, 0, 0.5)">MANGO</strong><strong style="color:#F4A300">!!!</strong></p>
           </div>
-          <span class="profile-bar">
-            <span class="muted">Profile:</span>
-            <strong id="activeProfile" style="margin-right:5px">—</strong>
-            <button id="switchProfileBtn" class="ghost small">Switch</button>
-          </span>
+          <div class="header-right">
+            <span class="profile-bar">
+              <span class="muted">Profile:</span>
+              <strong id="activeProfile" style="margin-right:5px">—</strong>
+              <button id="switchProfileBtn" class="ghost small">Switch</button>
+            </span>
+            <label class="theme-switch" title="Toggle dark mode">
+              <span class="theme-label">Light Mode</span>
+              <input type="checkbox" id="themeToggle" />
+              <span class="theme-slider"></span>
+            </label>
+          </div>
         </div>
         <div class="setup-summary" id="setupSummary"></div>
         <div class="setup-grid">

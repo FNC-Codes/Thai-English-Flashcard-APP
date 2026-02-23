@@ -1,3 +1,19 @@
+const THEME_KEY = "thaiFlashTheme";
+(function initTheme() {
+  const saved = localStorage.getItem(THEME_KEY);
+  if (saved === "dark") {
+    document.body.classList.add("dark-mode");
+    document.getElementById("themeToggle").checked = true;
+    document.querySelector(".theme-label").textContent = "Dark Mode";
+  }
+})();
+document.getElementById("themeToggle").addEventListener("change", (e) => {
+  const isDark = e.target.checked;
+  document.body.classList.toggle("dark-mode", isDark);
+  localStorage.setItem(THEME_KEY, isDark ? "dark" : "light");
+  document.querySelector(".theme-label").textContent = isDark ? "Dark Mode" : "Light Mode";
+});
+
 const DATA_PATH = "./thai_vocab_v1.json";
 const BUILD_TAG = "2026-02-21b";
 const dataUrl = new URL(DATA_PATH, window.location.href);
@@ -568,7 +584,7 @@ const renderFieldToggles = (target, activeSet, side) => {
     });
     const bigLabel = document.createElement("span");
     bigLabel.className = "muted";
-    bigLabel.textContent = "Big";
+    bigLabel.textContent = "Main";
     const text = document.createElement("span");
     text.textContent = field.label;
     label.appendChild(input);
