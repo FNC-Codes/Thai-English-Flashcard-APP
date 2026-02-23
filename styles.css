@@ -302,7 +302,7 @@ button:disabled {
 
 .field-grid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 8px;
 }
 
@@ -679,6 +679,17 @@ button:disabled {
     padding: 14px;
   }
 
+  .setup-header {
+    flex-direction: column;
+  }
+
+  .header-right {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
   .setup-grid {
     grid-template-columns: 1fr;
   }
@@ -831,9 +842,10 @@ body.dark-mode {
 }
 
 body.dark-mode .tts-btn {
-  background: #d4920a;
-  border: 1px solid #d4920a;
-  color: #16161a;
+  background: transparent;
+  border: 1px solid rgba(212, 146, 10, 0.5);
+  color: #d4920a;
+  box-shadow: 0 0 12px rgba(212, 146, 10, 0.15);
 }
 
 body.dark-mode .primary {
