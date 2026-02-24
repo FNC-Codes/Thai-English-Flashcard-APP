@@ -6,6 +6,8 @@ function applyTheme(isDark) {
   const btm = document.getElementById("bottomThemeToggle");
   if (btm) btm.checked = isDark;
   document.querySelectorAll(".theme-label").forEach(el => el.textContent = isDark ? "Dark Mode" : "Light Mode");
+  const meta = document.getElementById("metaThemeColor");
+  if (meta) meta.setAttribute("content", isDark ? "#16161a" : "#F7F1E3");
 }
 (function initTheme() {
   const saved = localStorage.getItem(THEME_KEY);
