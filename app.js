@@ -522,7 +522,6 @@ const advanceCard = () => {
   }
   state.flipped = false;
   applyFlip();
-  updateTopbar();
   updateCardTracker();
   setTimeout(() => {
     updateCard();
