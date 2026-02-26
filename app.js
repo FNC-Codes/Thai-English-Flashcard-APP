@@ -835,8 +835,10 @@ els.toggleSelectBtn.addEventListener("click", () => {
 
 els.startBtn.addEventListener("click", () => {
   state.sessionStarted = true;
+  state.flipped = false;
   buildDeck();
   updateCard();
+  applyFlip();
   persistSettings();
   setSetupCollapsed(true);
   document.querySelector(".app").classList.add("in-session");

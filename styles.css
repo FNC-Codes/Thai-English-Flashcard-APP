@@ -32,10 +32,6 @@ body {
   touch-action: manipulation;
 }
 
-body:has(.app.in-session) {
-  padding-top: 130px;
-}
-
 html {
   overflow-x: hidden;
 }
@@ -73,6 +69,10 @@ html {
 @media (min-width: 769px) {
   .tts-btn {
     display: none;
+  }
+
+  body:has(.app.in-session) {
+    padding-top: 130px;
   }
 }
 
@@ -966,6 +966,10 @@ button:disabled {
 }
 
 @media (max-width: 768px) {
+  .card-section {
+    position: relative;
+  }
+
   .bottom-theme-toggle {
     display: flex;
     align-self: flex-start;
@@ -978,10 +982,6 @@ button:disabled {
     position: absolute;
     bottom: 12px;
     right: 12px;
-  }
-
-  .session-controls__right {
-    position: relative;
   }
 }
 
