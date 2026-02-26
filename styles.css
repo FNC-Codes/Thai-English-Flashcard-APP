@@ -843,22 +843,22 @@ button:disabled {
   }
 
   .card-section {
-    padding: 16px;
-    position: relative;
+    padding: 16px 16px 24px 16px;
+  }
+
+  .session-footer {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+  }
+
+  .status {
+    order: 2;
   }
 
   .bottom-theme-toggle {
-    display: flex;
-    align-self: flex-start;
-    position: absolute;
-    bottom: 12px;
-    left: 12px;
-  }
-
-  .card-tracker {
-    position: absolute;
-    bottom: 12px;
-    right: 12px;
+    order: 1;
   }
 
   .card {
