@@ -853,12 +853,16 @@ els.setupToggle.addEventListener("click", () => {
 els.confirmEndBtn.addEventListener("click", () => {
   els.endSessionModal.classList.remove("show");
   state.sessionStarted = false;
+  state.deck = [];
+  state.currentIndex = 0;
+  state.flipped = false;
   document.querySelector(".app").classList.remove("in-session");
   setSetupCollapsed(false);
   renderCategories();
   updateSelectionCounts();
   updateSetupSummary();
   updateTopbar();
+  applyFlip();
   updateCard();
 });
 
@@ -876,12 +880,16 @@ els.reviewWrongBtn.addEventListener("click", reviewWrongCards);
 els.exitSummaryBtn.addEventListener("click", () => {
   closeSummary();
   state.sessionStarted = false;
+  state.deck = [];
+  state.currentIndex = 0;
+  state.flipped = false;
   document.querySelector(".app").classList.remove("in-session");
   setSetupCollapsed(false);
   renderCategories();
   updateSelectionCounts();
   updateSetupSummary();
   updateTopbar();
+  applyFlip();
   updateCard();
 });
 
