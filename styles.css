@@ -271,7 +271,7 @@ html {
   font-size: 0.9rem;
 }
 
-.setup.collapsed .setup-expand-btn {
+.app:not(.in-session) .setup-expand-btn {
   display: block;
 }
 
@@ -531,6 +531,7 @@ button:disabled {
   padding: 0;
   cursor: pointer;
   outline: none;
+  font-family: 'Fredoka', 'Space Grotesk', sans-serif;
 }
 
 .card-start-btn:hover {
@@ -747,9 +748,13 @@ body.dark-mode .card-start-btn:hover {
 }
 
 .session-controls__center {
-  display: flex;
+  display: none;
   justify-content: center;
   gap: 12px;
+}
+
+.app.in-session .session-controls__center {
+  display: flex;
 }
 
 .session-controls__right {
@@ -848,7 +853,7 @@ body.dark-mode .card-start-btn:hover {
     margin-left: 8px;
   }
 
-  .setup-block.collapsed .setup-block-toggle::before {
+  .setup-block-toggle::before {
     content: '+';
   }
 
@@ -910,7 +915,7 @@ body.dark-mode .card-start-btn:hover {
   }
 
   .card-section {
-    padding: 16px 16px 24px 16px;
+    padding: 16px;
     position: relative;
   }
 

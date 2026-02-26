@@ -120,9 +120,10 @@ const setSetupCollapsed = (collapsed) => {
   els.setupToggle.textContent = "Menu";
   els.setupToggle.setAttribute("aria-expanded", (!collapsed).toString());
   
-  // Hide expand button when not collapsed or when in session
+  // Always show expand button when not in session, update text based on state
   if (els.setupExpandBtn) {
-    els.setupExpandBtn.style.display = collapsed && !state.sessionStarted ? 'block' : 'none';
+    els.setupExpandBtn.style.display = state.sessionStarted ? 'none' : 'block';
+    els.setupExpandBtn.textContent = collapsed ? 'Show More' : 'Show Less';
   }
   
   updateSetupSummary();
@@ -751,11 +752,12 @@ const ensureProfile = () => {
 const COLLAPSED_BLOCKS_KEY = 'collapsedSetupBlocks';
 
 const initSetupBlockToggles = () => {
-  // Load collapsed state from localStorage or default to all collapsed on mobile
-  const savedCollapsed = localStorage.getItem(COLLAPSED_BLOCKS_KEY);
-  const collapsedBlocks = savedCollapsed 
-    ? JSON.parse(savedCollapsed) 
-    : (window.innerWidth <= 768 ? ['front', 'back', 'options'] : []);
+  const isMobile = window.innerWidth <= 768;
+  
+  // On mobile: always collapse all blocks. On desktop: load from localStorage
+  const collapsedBlocks = isMobile 
+    ? ['front', 'back', 'options'] 
+    : (JSON.parse(localStorage.getItem(COLLAPSED_BLOCKS_KEY) || '[]'));
   
   // Apply collapsed state to blocks
   collapsedBlocks.forEach(blockId => {
@@ -778,11 +780,13 @@ const initSetupBlockToggles = () => {
       
       block.classList.toggle('collapsed');
       
-      // Save state to localStorage
-      const allCollapsed = Array.from(document.querySelectorAll('.setup-block.collapsed'))
-        .map(b => b.querySelector('.setup-block-toggle')?.dataset.block)
-        .filter(Boolean);
-      localStorage.setItem(COLLAPSED_BLOCKS_KEY, JSON.stringify(allCollapsed));
+      // Only save state to localStorage on desktop
+      if (!isMobile) {
+        const allCollapsed = Array.from(document.querySelectorAll('.setup-block.collapsed'))
+          .map(b => b.querySelector('.setup-block-toggle')?.dataset.block)
+          .filter(Boolean);
+        localStorage.setItem(COLLAPSED_BLOCKS_KEY, JSON.stringify(allCollapsed));
+      }
     });
   });
 };
@@ -901,7 +905,8 @@ els.setupToggle.addEventListener("click", () => {
 });
 
 els.setupExpandBtn.addEventListener("click", () => {
-  setSetupCollapsed(false);
+  const isCurrentlyCollapsed = els.setupSection.classList.contains("collapsed");
+  setSetupCollapsed(!isCurrentlyCollapsed);
 });
 
 els.confirmEndBtn.addEventListener("click", () => {
