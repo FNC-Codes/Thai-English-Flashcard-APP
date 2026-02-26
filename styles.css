@@ -86,7 +86,8 @@ html {
   gap: 6px;
   font-weight: 600;
   color: var(--muted);
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow: hidden;
 }
 
 .session-info .dot {
@@ -864,6 +865,7 @@ button.danger:hover {
 
   .setup-block {
     position: relative;
+    min-height: 72px;
   }
 
   .setup-block h2 {
