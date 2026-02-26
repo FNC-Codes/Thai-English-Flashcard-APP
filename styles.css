@@ -873,8 +873,7 @@ button.danger:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    line-height: 1.2;
-    min-height: 24px;
+    line-height: 1;
     margin: 0;
     padding: 0;
   }
@@ -894,9 +893,8 @@ button.danger:hover {
     padding: 0;
     line-height: 1;
     flex-shrink: 0;
+    margin: 0;
     margin-left: 8px;
-    margin-top: 0;
-    margin-bottom: 0;
   }
 
   .setup-block-toggle::before {
@@ -909,8 +907,7 @@ button.danger:hover {
 
   .setup-block.collapsed {
     min-height: 0;
-    height: 48px;
-    padding: 12px 18px;
+    padding: 10px 18px;
     overflow: hidden;
   }
 
