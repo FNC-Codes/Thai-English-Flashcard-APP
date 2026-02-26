@@ -558,6 +558,7 @@ body.dark-mode .card-start-btn:hover {
   font-size: 1.1rem;
   font-weight: 700;
   color: #3B2A1A;
+  font-family: 'Fredoka', 'Space Grotesk', sans-serif;
 }
 
 .card.loading .card-face {
