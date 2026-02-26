@@ -478,6 +478,7 @@ button:disabled {
   gap: 12px;
   box-shadow: var(--shadow);
   margin-top: -6px;
+  position: relative;
 }
 
 .card {
@@ -736,6 +737,9 @@ body.dark-mode .card-start-btn:hover {
 }
 
 .session-controls__right {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
   display: flex;
   gap: 12px;
   align-items: center;
@@ -858,6 +862,9 @@ body.dark-mode .card-start-btn:hover {
     justify-content: space-between;
     align-items: flex-end;
     width: 100%;
+  }
+
+  .app.in-session .session-footer {
     margin-top: 20px;
   }
 
