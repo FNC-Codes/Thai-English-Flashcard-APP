@@ -117,7 +117,7 @@ const updateSetupSummary = () => {
 
 const setSetupCollapsed = (collapsed) => {
   els.setupSection.classList.toggle("collapsed", collapsed);
-  els.setupToggle.textContent = collapsed ? "Change flash cards" : "Minimize";
+  els.setupToggle.textContent = "Menu";
   els.setupToggle.setAttribute("aria-expanded", (!collapsed).toString());
   updateSetupSummary();
 };
@@ -351,10 +351,12 @@ const updateCard = () => {
   if (!state.sessionStarted || state.deck.length === 0) {
     els.frontFieldsView.innerHTML = "";
     els.backFieldsView.innerHTML = "";
-    els.frontHint.textContent = "Select categories to begin";
+    els.frontHint.textContent = "";
+    els.startBtn.style.display = "";
     return;
   }
 
+  els.startBtn.style.display = "none";
   const card = state.deck[state.currentIndex];
   renderFields(els.frontFieldsView, card, state.frontFields, state.bigFieldFront);
   renderFields(els.backFieldsView, card, state.backFields, state.bigFieldBack);
@@ -835,25 +837,22 @@ els.startBtn.addEventListener("click", () => {
   buildDeck();
   updateCard();
   persistSettings();
-  els.setupToggle.classList.remove("hidden");
   setSetupCollapsed(true);
   document.querySelector(".app").classList.add("in-session");
 });
 
 els.setupToggle.addEventListener("click", () => {
-  const collapsed = els.setupSection.classList.contains("collapsed");
-  if (collapsed) {
-    state.sessionStarted = false;
-    document.querySelector(".app").classList.remove("in-session");
-    setSetupCollapsed(false);
-    els.setupToggle.classList.add("hidden");
-    renderCategories();
-    updateSelectionCounts();
-    updateSetupSummary();
-    updateTopbar();
-  } else {
-    setSetupCollapsed(true);
+  if (state.sessionStarted) {
+    if (!confirm("This will end your current session. Continue?")) return;
   }
+  state.sessionStarted = false;
+  document.querySelector(".app").classList.remove("in-session");
+  setSetupCollapsed(false);
+  renderCategories();
+  updateSelectionCounts();
+  updateSetupSummary();
+  updateTopbar();
+  updateCard();
 });
 
 
@@ -868,12 +867,11 @@ els.exitSummaryBtn.addEventListener("click", () => {
   state.sessionStarted = false;
   document.querySelector(".app").classList.remove("in-session");
   setSetupCollapsed(false);
-  els.setupToggle.classList.add("hidden");
   renderCategories();
   updateSelectionCounts();
   updateSetupSummary();
   updateTopbar();
-  setStatus("Pick categories and start a session.");
+  updateCard();
 });
 
 
