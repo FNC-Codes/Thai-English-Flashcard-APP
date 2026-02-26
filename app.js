@@ -236,8 +236,7 @@ const els = {
   switchProfileBtn: document.getElementById("switchProfileBtn"),
   frontFields: document.getElementById("frontFields"),
   backFields: document.getElementById("backFields"),
-  selectAllBtn: document.getElementById("selectAllBtn"),
-  clearAllBtn: document.getElementById("clearAllBtn"),
+  toggleSelectBtn: document.getElementById("toggleSelectBtn"),
   startBtn: document.getElementById("startBtn"),
   mangoCounter: document.getElementById("mangoCounter"),
   categoryList: document.getElementById("categoryList"),
@@ -535,6 +534,7 @@ const renderCategories = () => {
       updateTopbar();
       updateSelectionCounts();
       updateSetupSummary();
+      els.toggleSelectBtn.textContent = state.selectedCategories.size === state.rawCategories.length ? "Clear All" : "Select All";
     });
 
     const name = document.createElement("span");
@@ -814,17 +814,15 @@ els.srsToggle.addEventListener("change", (event) => {
 
 els.resetSrsBtn.addEventListener("click", resetSrs);
 
-els.selectAllBtn.addEventListener("click", () => {
-  state.rawCategories.forEach((cat) => state.selectedCategories.add(cat.category));
-  renderCategories();
-  updateTopbar();
-  updateSetupSummary();
-  updateSelectionCounts();
-  persistSettings();
-});
-
-els.clearAllBtn.addEventListener("click", () => {
-  state.selectedCategories.clear();
+els.toggleSelectBtn.addEventListener("click", () => {
+  const allSelected = state.selectedCategories.size === state.rawCategories.length;
+  if (allSelected) {
+    state.selectedCategories.clear();
+    els.toggleSelectBtn.textContent = "Select All";
+  } else {
+    state.rawCategories.forEach((cat) => state.selectedCategories.add(cat.category));
+    els.toggleSelectBtn.textContent = "Clear All";
+  }
   renderCategories();
   updateTopbar();
   updateSetupSummary();

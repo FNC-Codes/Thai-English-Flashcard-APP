@@ -217,17 +217,23 @@ html {
   color: var(--muted);
 }
 
-.category-controls {
+.sections-header {
   display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
   align-items: center;
+  gap: 16px;
 }
 
-.category-controls .mango-counter {
+.sections-header h2 {
+  margin: 0;
+}
+
+.sections-header .mango-counter {
+  flex: 1;
+}
+
+.sections-header button {
   margin-left: auto;
 }
-
 
 button {
   border: none;
