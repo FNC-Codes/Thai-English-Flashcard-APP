@@ -342,6 +342,37 @@ const updateTopbar = () => {
   
   const profile = state.profiles.find((item) => item.id === state.activeProfileId);
   els.activeProfile.textContent = profile ? profile.name : "—";
+  
+  // Update card tracker when not in session
+  if (!state.sessionStarted) {
+    updateCardTracker();
+  }
+};
+
+const updateCardTracker = () => {
+  if (state.sessionStarted && state.deck.length > 0) {
+    // During gameplay: show current position
+    els.cardTracker.textContent = `${state.currentIndex + 1} / ${state.deck.length}`;
+  } else {
+    // Before/after gameplay: show available/total
+    let progressText = "0 / 0";
+    if (state.selectedCategories.size > 0) {
+      const selected = state.rawCategories.filter((cat) => state.selectedCategories.has(cat.category));
+      const total = selected.reduce((sum, cat) => sum + cat.items.length, 0);
+      const available = state.srsEnabled
+        ? selected.reduce((sum, cat) => {
+            const due = cat.items.filter((item, idx) => {
+              const id = cardId(cat.category, idx, item);
+              const srs = state.srsState[id] || createSrsState();
+              return srs.due <= today();
+            }).length;
+            return sum + due;
+          }, 0)
+        : total;
+      progressText = state.srsEnabled ? `${available}/${total} SRS` : `${available} / ${total}`;
+    }
+    els.cardTracker.textContent = progressText;
+  }
 };
 
 const renderFields = (target, card, fields, bigField) => {
@@ -420,6 +451,7 @@ const updateCard = () => {
   renderFields(els.frontFieldsView, card, state.frontFields, state.bigFieldFront);
   renderFields(els.backFieldsView, card, state.backFields, state.bigFieldBack);
   els.frontHint.textContent = state.flipped ? "" : "Tap to Flip";
+  updateCardTracker();
 };
 
 const applyFlip = () => {
@@ -469,6 +501,7 @@ const buildDeck = () => {
   state.flipped = false;
   applyFlip();
   updateTopbar();
+  updateCardTracker();
 
   if (state.deck.length === 0) {
     setStatus(state.srsEnabled ? "No due cards right now." : "No cards available. Select more categories.");
@@ -490,6 +523,7 @@ const advanceCard = () => {
   state.flipped = false;
   applyFlip();
   updateTopbar();
+  updateCardTracker();
   setTimeout(() => {
     updateCard();
     els.flashcard.classList.remove("loading");
@@ -979,6 +1013,7 @@ els.confirmEndBtn.addEventListener("click", () => {
   updateTopbar();
   applyFlip();
   updateCard();
+  updateCardTracker();
 });
 
 els.cancelEndBtn.addEventListener("click", () => {
@@ -1006,6 +1041,7 @@ els.exitSummaryBtn.addEventListener("click", () => {
   updateTopbar();
   applyFlip();
   updateCard();
+  updateCardTracker();
 });
 
 
