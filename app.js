@@ -87,9 +87,11 @@ const state = {
 };
 
 const updateSelectionCounts = () => {
-  const selected = state.selectedCategories.size
-    ? state.rawCategories.filter((cat) => state.selectedCategories.has(cat.category))
-    : state.rawCategories;
+  if (state.selectedCategories.size === 0) {
+    els.progressText.textContent = "0 / 0";
+    return;
+  }
+  const selected = state.rawCategories.filter((cat) => state.selectedCategories.has(cat.category));
   const total = selected.reduce((sum, cat) => sum + cat.items.length, 0);
   const available = state.srsEnabled
     ? selected.reduce((sum, cat) => {
@@ -312,9 +314,11 @@ const updateTopbar = () => {
     els.cardTracker.textContent = `${current} / ${deckSize}`;
   }
   if (state.selectedCategories.size === 0) {
-    els.activeCategories.textContent = "All categories";
+    els.activeCategories.textContent = "Choose a section";
+  } else if (state.selectedCategories.size === 1) {
+    els.activeCategories.textContent = Array.from(state.selectedCategories)[0];
   } else {
-    els.activeCategories.textContent = Array.from(state.selectedCategories).join(", ");
+    els.activeCategories.textContent = `${state.selectedCategories.size} sections`;
   }
   const profile = state.profiles.find((item) => item.id === state.activeProfileId);
   els.activeProfile.textContent = profile ? profile.name : "—";
