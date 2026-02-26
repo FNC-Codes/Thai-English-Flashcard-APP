@@ -259,6 +259,9 @@ const els = {
   summaryList: document.getElementById("summaryList"),
   reviewWrongBtn: document.getElementById("reviewWrongBtn"),
   exitSummaryBtn: document.getElementById("exitSummaryBtn"),
+  endSessionModal: document.getElementById("endSessionModal"),
+  confirmEndBtn: document.getElementById("confirmEndBtn"),
+  cancelEndBtn: document.getElementById("cancelEndBtn"),
   profileList: document.getElementById("profileList"),
   newProfileName: document.getElementById("newProfileName"),
   createProfileBtn: document.getElementById("createProfileBtn"),
@@ -841,8 +844,14 @@ els.startBtn.addEventListener("click", () => {
 
 els.setupToggle.addEventListener("click", () => {
   if (state.sessionStarted) {
-    if (!confirm("This will end your current session. Continue?")) return;
+    els.endSessionModal.classList.add("show");
+  } else {
+    setSetupCollapsed(false);
   }
+});
+
+els.confirmEndBtn.addEventListener("click", () => {
+  els.endSessionModal.classList.remove("show");
   state.sessionStarted = false;
   document.querySelector(".app").classList.remove("in-session");
   setSetupCollapsed(false);
@@ -851,6 +860,10 @@ els.setupToggle.addEventListener("click", () => {
   updateSetupSummary();
   updateTopbar();
   updateCard();
+});
+
+els.cancelEndBtn.addEventListener("click", () => {
+  els.endSessionModal.classList.remove("show");
 });
 
 

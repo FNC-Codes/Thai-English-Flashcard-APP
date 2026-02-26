@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <title>Mango Flashcards Thai/English</title>
+    <title>Mango Flashcards</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@400;600&family=Space+Grotesk:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Noto+Serif+Thai:wght@400;600&family=Space+Grotesk:wght@400;600&display=swap"
       rel="stylesheet"
     />
     <meta name="theme-color" content="#F7F1E3" id="metaThemeColor" />
@@ -19,8 +19,8 @@
       <section class="setup" id="setupSection">
         <div class="setup-header">
           <div>
-            <h1>Mango Flashcards Thai/English</h1>
-            <p class="muted" style="font-weight:700; margin-bottom:24px"><span style="color:#F4A300">Use Mobile if you want text-to-speech for Thai.</span> Get 100% in a section to earn a <span style="color:#F4A300">MANGO!!!</span></p>
+            <img src="./MANGOFLASHCARDSLOGO.png" alt="Mango Flashcards" class="title-logo" />
+            <p class="app-description"><span class="desc-large">Thai & English Flashcards</span><br><span class="desc-line2"><span style="color:#2F6B3D">Use Mobile if you want text-to-speech for Thai.</span> Get <span style="color:#2F6B3D; font-weight:700">100%</span> in a section to earn a <span style="color:#F4A300; font-weight:700">MANGO!!!</span></span></p>
           </div>
           <div class="header-right">
             <span class="profile-bar">
@@ -128,6 +128,17 @@
         <div class="summary-actions">
           <button id="reviewWrongBtn" class="primary">Review Wrong Cards</button>
           <button id="exitSummaryBtn" class="ghost">Exit</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="endSessionModal">
+      <div class="modal-card">
+        <h2>End Session?</h2>
+        <p>This will end your current session and return to the menu.</p>
+        <div class="summary-actions">
+          <button id="confirmEndBtn" class="primary">End Session</button>
+          <button id="cancelEndBtn" class="ghost">Cancel</button>
         </div>
       </div>
     </div>

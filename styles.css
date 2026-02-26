@@ -151,7 +151,7 @@ html {
   padding: 24px;
   border: 2px solid rgba(47, 107, 61, 0.3);
   display: grid;
-  gap: 18px;
+  gap: 12px;
   box-shadow: 0 4px 16px rgba(59, 42, 26, 0.10);
 }
 
@@ -173,12 +173,48 @@ html {
 }
 
 .setup-block h2 {
+  font-family: 'Fredoka', 'Space Grotesk', sans-serif;
   font-size: 1.05rem;
 }
 
 .setup-header h1 {
+  font-family: 'Fredoka', 'Space Grotesk', sans-serif;
   font-size: clamp(1.8rem, 3vw, 2.4rem);
-  margin-bottom: 6px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.title-logo {
+  display: block;
+  max-width: min(270px, 100%);
+  height: auto;
+  margin-bottom: 24px;
+}
+
+.subtitle {
+  font-family: 'Fredoka', 'Space Grotesk', sans-serif;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  color: var(--muted);
+  margin: 0 0 16px 0;
+  font-weight: 600;
+}
+
+.app-description {
+  font-family: 'Fredoka', 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.2;
+}
+
+.desc-large {
+  font-size: 2em;
+}
+
+.desc-line2 {
+  display: inline-block;
+  margin-top: 2px;
 }
 
 .setup-header {
@@ -362,6 +398,7 @@ button:disabled {
 }
 
 .mango-counter {
+  font-family: 'Fredoka', 'Space Grotesk', sans-serif;
   font-size: 0.95rem;
   color: var(--muted);
   font-weight: 600;
@@ -372,6 +409,10 @@ button:disabled {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.sections-header h2 {
+  font-family: 'Fredoka', 'Space Grotesk', sans-serif;
 }
 
 .category-item {
