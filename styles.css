@@ -187,6 +187,10 @@ html {
   font-size: 1.05rem;
 }
 
+.setup-block-toggle {
+  display: none;
+}
+
 .setup-header h1 {
   font-family: 'Fredoka', 'Space Grotesk', sans-serif;
   font-size: clamp(1.8rem, 3vw, 2.4rem);
@@ -250,13 +254,25 @@ html {
   font-size: 0.95rem;
 }
 
-.setup.collapsed .setup-grid,
-.setup.collapsed .category-controls,
-.setup.collapsed .category-list,
-.setup.collapsed .setup-summary,
-.setup.collapsed h1,
-.setup.collapsed p {
+.setup.collapsed .category-list {
   display: none;
+}
+
+.setup-expand-btn {
+  display: none;
+  margin: 8px auto;
+  text-align: center;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 4px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.setup.collapsed .setup-expand-btn {
+  display: block;
 }
 
 .setup.collapsed {
@@ -804,6 +820,47 @@ body.dark-mode .card-start-btn:hover {
   .session-info {
     max-width: 100%;
     min-width: 0;
+  }
+
+  .setup-block {
+    position: relative;
+  }
+
+  .setup-block h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .setup-block-toggle {
+    display: inline-block;
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    width: 24px;
+    height: 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    color: var(--muted);
+    padding: 0;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-left: 8px;
+  }
+
+  .setup-block.collapsed .setup-block-toggle::before {
+    content: '+';
+  }
+
+  .setup-block:not(.collapsed) .setup-block-toggle::before {
+    content: '−';
+  }
+
+  .setup-block.collapsed .field-grid,
+  .setup-block.collapsed label,
+  .setup-block.collapsed button:not(.setup-block-toggle),
+  .setup-block.collapsed span:not(.setup-block-toggle) {
+    display: none;
   }
 
   .session-info {

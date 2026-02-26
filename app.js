@@ -119,6 +119,12 @@ const setSetupCollapsed = (collapsed) => {
   els.setupSection.classList.toggle("collapsed", collapsed);
   els.setupToggle.textContent = "Menu";
   els.setupToggle.setAttribute("aria-expanded", (!collapsed).toString());
+  
+  // Hide expand button when not collapsed or when in session
+  if (els.setupExpandBtn) {
+    els.setupExpandBtn.style.display = collapsed && !state.sessionStarted ? 'block' : 'none';
+  }
+  
   updateSetupSummary();
 };
 
@@ -253,6 +259,7 @@ const els = {
   setupSection: document.getElementById("setupSection"),
   setupToggle: document.getElementById("setupToggle"),
   setupSummary: document.getElementById("setupSummary"),
+  setupExpandBtn: document.getElementById("setupExpandBtn"),
   profileModal: document.getElementById("profileModal"),
   summaryModal: document.getElementById("summaryModal"),
   summaryTop: document.getElementById("summaryTop"),
@@ -741,6 +748,45 @@ const ensureProfile = () => {
   }
 };
 
+const COLLAPSED_BLOCKS_KEY = 'collapsedSetupBlocks';
+
+const initSetupBlockToggles = () => {
+  // Load collapsed state from localStorage or default to all collapsed on mobile
+  const savedCollapsed = localStorage.getItem(COLLAPSED_BLOCKS_KEY);
+  const collapsedBlocks = savedCollapsed 
+    ? JSON.parse(savedCollapsed) 
+    : (window.innerWidth <= 768 ? ['front', 'back', 'options'] : []);
+  
+  // Apply collapsed state to blocks
+  collapsedBlocks.forEach(blockId => {
+    const btn = document.querySelector(`[data-block="${blockId}"]`);
+    if (btn) {
+      const block = btn.closest('.setup-block');
+      if (block) {
+        block.classList.add('collapsed');
+      }
+    }
+  });
+  
+  // Add event listeners to toggle buttons
+  document.querySelectorAll('.setup-block-toggle').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const block = btn.closest('.setup-block');
+      if (!block) return;
+      
+      block.classList.toggle('collapsed');
+      
+      // Save state to localStorage
+      const allCollapsed = Array.from(document.querySelectorAll('.setup-block.collapsed'))
+        .map(b => b.querySelector('.setup-block-toggle')?.dataset.block)
+        .filter(Boolean);
+      localStorage.setItem(COLLAPSED_BLOCKS_KEY, JSON.stringify(allCollapsed));
+    });
+  });
+};
+
 const init = async () => {
   if (!IS_DESKTOP) initVoices();
   els.ttsBtn = ensureTtsButton();
@@ -769,7 +815,7 @@ const init = async () => {
     }
     updateSetupSummary();
     updateSelectionCounts();
-    setSetupCollapsed(false);
+    setSetupCollapsed(true);
     document.querySelector(".app").classList.remove("in-session");
     ensureProfile();
     if (!IS_DESKTOP && els.ttsBtn) {
@@ -779,6 +825,7 @@ const init = async () => {
         speakCurrentCard();
       });
     }
+    initSetupBlockToggles();
   } catch (error) {
     const message = error instanceof Error ? error.message : "Unknown error";
     setStatus(`Failed to load JSON (${message}). Open ${DATA_URL} to verify it loads.`);
@@ -851,6 +898,10 @@ els.setupToggle.addEventListener("click", () => {
   } else {
     setSetupCollapsed(false);
   }
+});
+
+els.setupExpandBtn.addEventListener("click", () => {
+  setSetupCollapsed(false);
 });
 
 els.confirmEndBtn.addEventListener("click", () => {
