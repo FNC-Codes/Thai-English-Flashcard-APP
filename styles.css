@@ -747,6 +747,7 @@ body.dark-mode .card-start-btn:hover {
 }
 
 .card-tracker {
+  display: none;
   padding: 10px 14px;
   border-radius: 999px;
   border: 1px solid var(--border);
@@ -849,6 +850,7 @@ body.dark-mode .card-start-btn:hover {
 
   .card-section {
     padding: 16px 16px 24px 16px;
+    position: relative;
   }
 
   .session-footer {
@@ -898,7 +900,7 @@ body.dark-mode .card-start-btn:hover {
 
   .session-controls__right {
     position: absolute;
-    bottom: 24px;
+    bottom: 16px;
     right: 16px;
   }
 
@@ -989,6 +991,10 @@ body.dark-mode .card-start-btn:hover {
 
 .app.in-session .bottom-theme-toggle {
   display: flex;
+}
+
+.app.in-session .card-tracker {
+  display: block;
 }
 
 
