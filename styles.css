@@ -900,12 +900,8 @@ body.dark-mode .card-start-btn:hover {
 
   .session-controls__right {
     position: absolute;
-    bottom: 16px;
+    bottom: -2px;
     right: 16px;
-  }
-
-  .session-controls__center {
-    margin-bottom: 32px;
   }
 
   .session-controls button {
