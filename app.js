@@ -81,29 +81,14 @@ const state = {
   bigFieldBack: "english",
   profiles: [],
   activeProfileId: null,
+  currentEditingProfile: null,
   srsState: {},
   mastered: new Set(),
   backendAvailable: false,
 };
 
 const updateSelectionCounts = () => {
-  if (state.selectedCategories.size === 0) {
-    els.progressText.textContent = "0 / 0";
-    return;
-  }
-  const selected = state.rawCategories.filter((cat) => state.selectedCategories.has(cat.category));
-  const total = selected.reduce((sum, cat) => sum + cat.items.length, 0);
-  const available = state.srsEnabled
-    ? selected.reduce((sum, cat) => {
-        const due = cat.items.filter((item, idx) => {
-          const id = cardId(cat.category, idx, item);
-          const srs = state.srsState[id] || createSrsState();
-          return srs.due <= today();
-        }).length;
-        return sum + due;
-      }, 0)
-    : total;
-  els.progressText.textContent = `${available} / ${total}`;
+  // This function now just calculates, updateTopbar will display
 };
 
 const updateSetupSummary = () => {
@@ -234,8 +219,7 @@ const speakCurrentCard = () => {
 
 
 const els = {
-  progressText: document.getElementById("progressText"),
-  activeCategories: document.getElementById("activeCategories"),
+  sessionInfoText: document.getElementById("sessionInfoText"),
   shuffleToggle: document.getElementById("shuffleToggle"),
   srsToggle: document.getElementById("srsToggle"),
   resetSrsBtn: document.getElementById("resetSrsBtn"),
@@ -262,6 +246,14 @@ const els = {
   setupSummary: document.getElementById("setupSummary"),
   setupExpandBtn: document.getElementById("setupExpandBtn"),
   profileModal: document.getElementById("profileModal"),
+  renameProfileModal: document.getElementById("renameProfileModal"),
+  renameProfileInput: document.getElementById("renameProfileInput"),
+  confirmRenameBtn: document.getElementById("confirmRenameBtn"),
+  cancelRenameBtn: document.getElementById("cancelRenameBtn"),
+  deleteProfileModal: document.getElementById("deleteProfileModal"),
+  deleteProfileMessage: document.getElementById("deleteProfileMessage"),
+  confirmDeleteBtn: document.getElementById("confirmDeleteBtn"),
+  cancelDeleteBtn: document.getElementById("cancelDeleteBtn"),
   summaryModal: document.getElementById("summaryModal"),
   summaryTop: document.getElementById("summaryTop"),
   summaryList: document.getElementById("summaryList"),
@@ -317,19 +309,37 @@ const setStatus = (text) => {
 };
 
 const updateTopbar = () => {
-  const deckSize = state.deck.length;
-  const current = deckSize === 0 ? 0 : state.currentIndex + 1;
-  updateSelectionCounts();
-  if (state.sessionStarted) {
-    els.cardTracker.textContent = `${current} / ${deckSize}`;
+  // Build progress display
+  let progressText = "0 / 0";
+  if (state.selectedCategories.size > 0) {
+    const selected = state.rawCategories.filter((cat) => state.selectedCategories.has(cat.category));
+    const total = selected.reduce((sum, cat) => sum + cat.items.length, 0);
+    const available = state.srsEnabled
+      ? selected.reduce((sum, cat) => {
+          const due = cat.items.filter((item, idx) => {
+            const id = cardId(cat.category, idx, item);
+            const srs = state.srsState[id] || createSrsState();
+            return srs.due <= today();
+          }).length;
+          return sum + due;
+        }, 0)
+      : total;
+    progressText = state.srsEnabled ? `${available}/${total} SRS` : `${available} / ${total}`;
   }
-  if (state.selectedCategories.size === 0) {
-    els.activeCategories.textContent = "Choose a section";
-  } else if (state.selectedCategories.size === 1) {
-    els.activeCategories.textContent = Array.from(state.selectedCategories)[0];
-  } else {
-    els.activeCategories.textContent = `${state.selectedCategories.size} sections`;
+  
+  // Build categories display
+  let categoriesText = "Choose a section";
+  if (state.selectedCategories.size === 1) {
+    categoriesText = Array.from(state.selectedCategories)[0];
+    if (state.shuffle) categoriesText += " • Shuffle";
+  } else if (state.selectedCategories.size > 1) {
+    categoriesText = `${state.selectedCategories.size} Categories`;
+    if (state.shuffle) categoriesText += " • Shuffle";
   }
+  
+  // Combine into single string
+  els.sessionInfoText.textContent = `${progressText} • ${categoriesText}`;
+  
   const profile = state.profiles.find((item) => item.id === state.activeProfileId);
   els.activeProfile.textContent = profile ? profile.name : "—";
 };
@@ -361,7 +371,42 @@ const updateCard = () => {
   if (!state.sessionStarted || state.deck.length === 0) {
     els.frontFieldsView.innerHTML = "";
     els.backFieldsView.innerHTML = "";
-    els.frontHint.textContent = "";
+    
+    // Always show hint message on menu
+    els.frontHint.textContent = "Select a category to begin";
+    
+    // Calculate if there would be any cards available
+    let hasAvailableCards = false;
+    if (state.selectedCategories.size > 0) {
+      const selected = state.rawCategories.filter((cat) => 
+        state.selectedCategories.has(cat.category)
+      );
+      
+      if (state.srsEnabled) {
+        // Check if any cards are due
+        const dueCount = selected.reduce((sum, cat) => {
+          const due = cat.items.filter((item, idx) => {
+            const id = cardId(cat.category, idx, item);
+            const srs = state.srsState[id] || createSrsState();
+            return srs.due <= today();
+          }).length;
+          return sum + due;
+        }, 0);
+        hasAvailableCards = dueCount > 0;
+      } else {
+        // Check if any items exist
+        const totalItems = selected.reduce((sum, cat) => sum + cat.items.length, 0);
+        hasAvailableCards = totalItems > 0;
+      }
+    }
+    
+    // Control button clickability
+    if (!hasAvailableCards) {
+      els.startBtn.style.pointerEvents = "none";
+    } else {
+      els.startBtn.style.pointerEvents = "";
+    }
+    
     els.startBtn.style.display = "";
     return;
   }
@@ -706,28 +751,20 @@ const renderProfiles = () => {
     renameBtn.className = "ghost small";
     renameBtn.textContent = "Rename";
     renameBtn.addEventListener("click", () => {
-      const newName = prompt("Rename profile", profile.name);
-      if (!newName) return;
-      profile.name = newName.trim();
-      persistSettings();
-      renderProfiles();
-      updateTopbar();
+      state.currentEditingProfile = profile;
+      els.renameProfileInput.value = profile.name;
+      els.renameProfileModal.classList.add("show");
+      els.renameProfileInput.focus();
+      els.renameProfileInput.select();
     });
 
     const deleteBtn = document.createElement("button");
     deleteBtn.className = "ghost small";
     deleteBtn.textContent = "Delete";
     deleteBtn.addEventListener("click", () => {
-      if (!confirm(`Delete profile '${profile.name}'?`)) return;
-      state.profiles = state.profiles.filter((p) => p.id !== profile.id);
-      if (state.activeProfileId === profile.id) {
-        state.activeProfileId = null;
-        localStorage.removeItem(ACTIVE_PROFILE_KEY);
-      }
-      saveProfiles();
-      renderProfiles();
-      updateTopbar();
-      ensureProfile();
+      state.currentEditingProfile = profile;
+      els.deleteProfileMessage.textContent = `Are you sure you want to delete '${profile.name}'?`;
+      els.deleteProfileModal.classList.add("show");
     });
 
     actions.appendChild(useBtn);
@@ -886,9 +923,22 @@ els.toggleSelectBtn.addEventListener("click", () => {
 
 els.startBtn.addEventListener("click", (event) => {
   event.stopPropagation();
+  
+  // Safety check - prevent starting with no categories
+  if (state.selectedCategories.size === 0) {
+    return;
+  }
+  
   state.sessionStarted = true;
   state.flipped = false;
   buildDeck();
+  
+  // Additional safety check - if deck is empty after building, don't start
+  if (state.deck.length === 0) {
+    state.sessionStarted = false;
+    return;
+  }
+  
   applyFlip();
   updateCard();
   persistSettings();
@@ -983,6 +1033,56 @@ els.createProfileBtn.addEventListener("click", () => {
   renderProfiles();
   applyProfile(profile);
   els.profileModal.classList.remove("show");
+});
+
+els.confirmRenameBtn.addEventListener("click", () => {
+  const newName = els.renameProfileInput.value.trim();
+  if (!newName) return;
+  state.currentEditingProfile.name = newName;
+  persistSettings();
+  renderProfiles();
+  updateTopbar();
+  els.renameProfileModal.classList.remove("show");
+  state.currentEditingProfile = null;
+});
+
+els.cancelRenameBtn.addEventListener("click", () => {
+  els.renameProfileModal.classList.remove("show");
+  state.currentEditingProfile = null;
+});
+
+els.confirmDeleteBtn.addEventListener("click", () => {
+  const profileToDelete = state.currentEditingProfile;
+  state.profiles = state.profiles.filter((p) => p.id !== profileToDelete.id);
+  if (state.activeProfileId === profileToDelete.id) {
+    state.activeProfileId = null;
+    localStorage.removeItem(ACTIVE_PROFILE_KEY);
+  }
+  saveProfiles();
+  renderProfiles();
+  updateTopbar();
+  ensureProfile();
+  els.deleteProfileModal.classList.remove("show");
+  state.currentEditingProfile = null;
+});
+
+els.cancelDeleteBtn.addEventListener("click", () => {
+  els.deleteProfileModal.classList.remove("show");
+  state.currentEditingProfile = null;
+});
+
+els.renameProfileModal.addEventListener("click", (e) => {
+  if (e.target === els.renameProfileModal) {
+    els.renameProfileModal.classList.remove("show");
+    state.currentEditingProfile = null;
+  }
+});
+
+els.deleteProfileModal.addEventListener("click", (e) => {
+  if (e.target === els.deleteProfileModal) {
+    els.deleteProfileModal.classList.remove("show");
+    state.currentEditingProfile = null;
+  }
 });
 
 init();

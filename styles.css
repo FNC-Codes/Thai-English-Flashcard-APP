@@ -83,7 +83,7 @@ html {
 .session-info {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
   font-weight: 600;
   color: var(--muted);
   flex-wrap: wrap;
@@ -518,7 +518,6 @@ button:disabled {
   align-items: center;
   gap: 12px;
   backface-visibility: hidden;
-  transition: transform 0.45s ease, opacity 0.2s ease;
 }
 
 .card-start-btn {
@@ -552,8 +551,8 @@ body.dark-mode .card-start-btn:hover {
 
 .mango-btn-text {
   position: absolute;
-  top: 55%;
-  left: 55%;
+  top: 52.5%;
+  left: 53.5%;
   transform: translate(-50%, -50%);
   font-size: 1.1rem;
   font-weight: 700;
@@ -705,6 +704,41 @@ body.dark-mode .card-start-btn:hover {
   color: var(--text);
   font-size: 16px;
   font-family: inherit;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+  justify-content: flex-end;
+}
+
+.modal-card input[type="text"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1rem;
+  margin-bottom: 16px;
+  font-family: inherit;
+}
+
+.modal-card p {
+  margin-bottom: 16px;
+  color: var(--text);
+  line-height: 1.5;
+  min-height: 44px;
+}
+
+button.danger {
+  background: #dc2626;
+  color: white;
+}
+
+button.danger:hover {
+  background: #b91c1c;
 }
 
 

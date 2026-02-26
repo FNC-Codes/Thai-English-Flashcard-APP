@@ -62,7 +62,7 @@
           </div>
         </div>
         <div class="sections-header">
-          <h2>Sections</h2>
+          <h2>Categories</h2>
           <span id="mangoCounter" class="mango-counter">🥭 0 / 0</span>
           <button id="toggleSelectBtn" class="ghost">Select All</button>
         </div>
@@ -72,9 +72,7 @@
 
       <section class="card-section" id="cardSection">
         <div class="session-info">
-          <span id="progressText">0 / 0</span>
-          <span class="dot">•</span>
-          <span id="activeCategories"></span>
+          <span id="sessionInfoText">0 / 0</span>
           <button id="setupToggle" class="ghost small" style="margin-left:auto">Menu</button>
         </div>
         <div class="card" id="flashcard">
@@ -117,6 +115,28 @@
         <div class="profile-create">
           <input type="text" id="newProfileName" placeholder="New profile name" />
           <button id="createProfileBtn" class="primary">Create</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="renameProfileModal">
+      <div class="modal-card">
+        <h2>Rename Profile</h2>
+        <input type="text" id="renameProfileInput" placeholder="Profile name" />
+        <div class="modal-actions">
+          <button id="cancelRenameBtn" class="ghost">Cancel</button>
+          <button id="confirmRenameBtn" class="primary">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="deleteProfileModal">
+      <div class="modal-card">
+        <h2>Delete Profile</h2>
+        <p id="deleteProfileMessage">Are you sure you want to delete this profile?</p>
+        <div class="modal-actions">
+          <button id="cancelDeleteBtn" class="ghost">Cancel</button>
+          <button id="confirmDeleteBtn" class="primary danger">Delete</button>
         </div>
       </div>
     </div>
