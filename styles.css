@@ -86,8 +86,7 @@ html {
   gap: 6px;
   font-weight: 600;
   color: var(--muted);
-  flex-wrap: nowrap;
-  overflow: hidden;
+  flex-wrap: wrap;
 }
 
 .session-info .dot {
@@ -615,6 +614,9 @@ body.dark-mode .card-start-btn:hover {
   bottom: 22px;
   left: 50%;
   transform: translateX(-50%);
+  white-space: nowrap;
+  max-width: 90%;
+  text-align: center;
 }
 
 .card-face#cardBack {
@@ -865,7 +867,6 @@ button.danger:hover {
 
   .setup-block {
     position: relative;
-    min-height: 72px;
   }
 
   .setup-block h2 {
@@ -896,6 +897,11 @@ button.danger:hover {
 
   .setup-block:not(.collapsed) .setup-block-toggle::before {
     content: '−';
+  }
+
+  .setup-block.collapsed {
+    min-height: 0;
+    height: auto;
   }
 
   .setup-block.collapsed .field-grid,

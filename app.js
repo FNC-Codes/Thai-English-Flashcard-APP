@@ -328,7 +328,7 @@ const updateTopbar = () => {
   }
   
   // Build categories display
-  let categoriesText = "Choose a section";
+  let categoriesText = "Choose a Category";
   if (state.selectedCategories.size === 1) {
     categoriesText = Array.from(state.selectedCategories)[0];
     if (state.shuffle) categoriesText += " • Shuffle";
@@ -372,8 +372,12 @@ const updateCard = () => {
     els.frontFieldsView.innerHTML = "";
     els.backFieldsView.innerHTML = "";
     
-    // Always show hint message on menu
-    els.frontHint.textContent = "Select a category to begin";
+    // Show hint message based on category selection
+    if (state.selectedCategories.size === 0) {
+      els.frontHint.textContent = "Choose a Category";
+    } else {
+      els.frontHint.textContent = "Click the Mango!";
+    }
     
     // Calculate if there would be any cards available
     let hasAvailableCards = false;
@@ -415,7 +419,7 @@ const updateCard = () => {
   const card = state.deck[state.currentIndex];
   renderFields(els.frontFieldsView, card, state.frontFields, state.bigFieldFront);
   renderFields(els.backFieldsView, card, state.backFields, state.bigFieldBack);
-  els.frontHint.textContent = state.flipped ? "" : "Tap to flip";
+  els.frontHint.textContent = state.flipped ? "" : "Tap to Flip";
 };
 
 const applyFlip = () => {
@@ -590,6 +594,7 @@ const renderCategories = () => {
       updateTopbar();
       updateSelectionCounts();
       updateSetupSummary();
+      updateCard();
       els.toggleSelectBtn.textContent = state.selectedCategories.size === state.rawCategories.length ? "Clear All" : "Select All";
     });
 
@@ -918,6 +923,7 @@ els.toggleSelectBtn.addEventListener("click", () => {
   updateTopbar();
   updateSetupSummary();
   updateSelectionCounts();
+  updateCard();
   persistSettings();
 });
 
