@@ -849,7 +849,7 @@ body.dark-mode .card-start-btn:hover {
   }
 
   .card-section {
-    padding: 16px 16px 60px 16px;
+    padding: 16px 16px 24px 16px;
     position: relative;
   }
 
@@ -858,6 +858,7 @@ body.dark-mode .card-start-btn:hover {
     justify-content: space-between;
     align-items: flex-end;
     width: 100%;
+    margin-top: 20px;
   }
 
   .status {
