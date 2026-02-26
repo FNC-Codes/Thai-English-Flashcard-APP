@@ -227,6 +227,16 @@ html {
   margin-top: 2px;
 }
 
+.mobile-break {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-break {
+    display: block;
+  }
+}
+
 .setup-header {
   display: flex;
   justify-content: space-between;
@@ -958,7 +968,20 @@ button:disabled {
 @media (max-width: 768px) {
   .bottom-theme-toggle {
     display: flex;
-    align-self: center;
+    align-self: flex-start;
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+  }
+
+  .card-tracker {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
+  }
+
+  .session-controls__right {
+    position: relative;
   }
 }
 
