@@ -844,6 +844,21 @@ button:disabled {
 
   .card-section {
     padding: 16px;
+    position: relative;
+  }
+
+  .bottom-theme-toggle {
+    display: flex;
+    align-self: flex-start;
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+  }
+
+  .card-tracker {
+    position: absolute;
+    bottom: 12px;
+    right: 12px;
   }
 
   .card {
@@ -965,25 +980,6 @@ button:disabled {
   display: flex;
 }
 
-@media (max-width: 768px) {
-  .card-section {
-    position: relative;
-  }
-
-  .bottom-theme-toggle {
-    display: flex;
-    align-self: flex-start;
-    position: absolute;
-    bottom: 12px;
-    left: 12px;
-  }
-
-  .card-tracker {
-    position: absolute;
-    bottom: 12px;
-    right: 12px;
-  }
-}
 
 /* ===== DARK MODE — Teak House at Night ===== */
 body.dark-mode {
