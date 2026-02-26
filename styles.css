@@ -513,11 +513,16 @@ button:disabled {
   border: none;
   padding: 0;
   cursor: pointer;
+  outline: none;
 }
 
 .card-start-btn:hover {
-  transform: translateY(50%);
-  box-shadow: none;
+  transform: translateY(50%) !important;
+  box-shadow: none !important;
+}
+
+body.dark-mode .card-start-btn:hover {
+  box-shadow: none !important;
 }
 
 .mango-btn-emoji {
@@ -889,6 +894,12 @@ button:disabled {
 
   .session-controls__spacer {
     display: none;
+  }
+
+  .session-controls__right {
+    position: absolute;
+    bottom: 24px;
+    right: 16px;
   }
 
   .session-controls button {

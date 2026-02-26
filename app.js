@@ -833,12 +833,13 @@ els.toggleSelectBtn.addEventListener("click", () => {
   persistSettings();
 });
 
-els.startBtn.addEventListener("click", () => {
+els.startBtn.addEventListener("click", (event) => {
+  event.stopPropagation();
   state.sessionStarted = true;
   state.flipped = false;
   buildDeck();
-  updateCard();
   applyFlip();
+  updateCard();
   persistSettings();
   setSetupCollapsed(true);
   document.querySelector(".app").classList.add("in-session");
