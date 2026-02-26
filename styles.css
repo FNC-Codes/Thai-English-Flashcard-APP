@@ -902,7 +902,7 @@ body.dark-mode .card-start-btn:hover {
     position: absolute;
     bottom: 16px;
     right: 16px;
-    gap: 12px;
+    gap: 32px;
   }
 
   .session-controls button {
