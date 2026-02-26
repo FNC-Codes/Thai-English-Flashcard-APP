@@ -916,7 +916,7 @@ els.confirmEndBtn.addEventListener("click", () => {
   state.currentIndex = 0;
   state.flipped = false;
   document.querySelector(".app").classList.remove("in-session");
-  setSetupCollapsed(false);
+  setSetupCollapsed(true);
   renderCategories();
   updateSelectionCounts();
   updateSetupSummary();
@@ -943,7 +943,7 @@ els.exitSummaryBtn.addEventListener("click", () => {
   state.currentIndex = 0;
   state.flipped = false;
   document.querySelector(".app").classList.remove("in-session");
-  setSetupCollapsed(false);
+  setSetupCollapsed(true);
   renderCategories();
   updateSelectionCounts();
   updateSetupSummary();
