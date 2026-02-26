@@ -255,7 +255,7 @@ html {
 }
 
 .setup.collapsed .category-list {
-  display: none;
+  display: none !important;
 }
 
 .setup-expand-btn {

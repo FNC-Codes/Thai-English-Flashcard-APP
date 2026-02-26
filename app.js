@@ -31,9 +31,9 @@ const STORAGE_VERSION_KEY = "thaiFlashStorageVersion";
 const STORAGE_VERSION = "v2";
 
 const FIELD_DEFS = [
-  { key: "thai", label: "Thai", className: "field-thai" },
   { key: "english", label: "English", className: "field-english" },
-  { key: "roman_tone", label: "Roman", className: "field-roman" },
+  { key: "thai", label: "Thai", className: "field-thai" },
+  { key: "roman_tone", label: "Roman Thai", className: "field-roman" },
   { key: "phonetic_easy", label: "Phonetic", className: "field-phonetic" },
 ];
 
